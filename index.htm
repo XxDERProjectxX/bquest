@@ -28,32 +28,32 @@
     
     <div id="app-1">
         <div class="container site-content mt-4">
-            <div class="row mb-3">
-                <div class="col-lg-3">
+            <div class="row">
+                <div class="col-lg-3 mb-3">
                     <h2>Easy</h2>
                     <textarea class="form-control" style="height: 300px" id="easyOnes">{{easyObjs}}</textarea>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-3 mb-3">
                     <h2>Medium</h2>
                     <textarea class="form-control" style="height: 300px" id="medOnes">{{mediumObjs}}</textarea>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-3 mb-3">
                     <h2>Hard</h2>
                     <textarea class="form-control" style="height: 300px" id="hardOnes">{{hardObjs}}</textarea>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-3 mb-3">
                     <h2>Blockers</h2>
                     <textarea class="form-control" style="height: 300px" id="vhardOnes">{{vhardObjs}}</textarea>
                 </div>
             </div>
             <input type="button" class="form-control btn btn-primary" value="Build Boards" onclick="buildBoards()">
-            <div class="py-5"></div>
-            <div class="row">
-                <div class="col-lg-6">
+
+            <div class="row mt-5">
+                <div class="col-lg-6 mb-3">
                     <h2>Board 1 (Bottom)</h2>
                     <textarea class="form-control" style="height: 200px" id="board1"></textarea>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 mb-3">
                     <h2>Border 2 (Top)</h2>
                     <textarea class="form-control" style="height: 200px" id="board2"></textarea>
                 </div>
@@ -62,7 +62,7 @@
     </div>
     
     <!-- footers -->
-    <footer class="site-footer bg-primary-subtle py-3">
+    <footer class="site-footer bg-primary-subtle py-4 mt-3">
         <div class="container">
             Site by RadRingtail
         </div>
@@ -79,9 +79,6 @@
                 objectives: objectiveData
             },
             computed: {
-                filteredItems: function() {
-                    return this.objectives
-                },
                 easyObjs: function() {
                     var names = this.objectives.filter(e => e.difficulty == 1).map(x => x.name);
                     return names.join('\n');
