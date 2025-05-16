@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue Prince Bingo</title> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Short+Stack&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to Main Content</a>
+    
+    <header class="py-2 sticky-top bg-primary-subtle shadow">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand fs-4" href="#">
+                        B Quest Bingo Generator
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <div id="app-1">
+        <div class="container site-content mt-4">
+            <div class="row mb-3">
+                <div class="col-lg-3">
+                    <h2>Easy</h2>
+                    <textarea class="form-control" style="height: 300px" id="easyOnes">{{easyObjs}}</textarea>
+                </div>
+                <div class="col-lg-3">
+                    <h2>Medium</h2>
+                    <textarea class="form-control" style="height: 300px" id="medOnes">{{mediumObjs}}</textarea>
+                </div>
+                <div class="col-lg-3">
+                    <h2>Hard</h2>
+                    <textarea class="form-control" style="height: 300px" id="hardOnes">{{hardObjs}}</textarea>
+                </div>
+                <div class="col-lg-3">
+                    <h2>Blockers</h2>
+                    <textarea class="form-control" style="height: 300px" id="vhardOnes">{{vhardObjs}}</textarea>
+                </div>
+            </div>
+            <input type="button" class="form-control btn btn-primary" value="Build Boards" onclick="buildBoards()">
+            <div class="py-5"></div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Board 1 (Bottom)</h2>
+                    <textarea class="form-control" style="height: 200px" id="board1"></textarea>
+                </div>
+                <div class="col-lg-6">
+                    <h2>Border 2 (Top)</h2>
+                    <textarea class="form-control" style="height: 200px" id="board2"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- footers -->
+    <footer class="site-footer bg-primary-subtle py-3">
+        <div class="container">
+            Site by RadRingtail
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/api-data.js"></script>
+    <script>
+        var app1 = new Vue({
+            el: '#app-1',
+            data: {
+                objectives: objectiveData
+            },
+            computed: {
+                filteredItems: function() {
+                    return this.objectives
+                },
+                easyObjs: function() {
+                    var names = this.objectives.filter(e => e.difficulty == 1).map(x => x.name);
+                    return names.join('\n');
+                },
+                mediumObjs: function() {
+                    var names = this.objectives.filter(e => e.difficulty == 2).map(x => x.name);
+                    return names.join('\n');
+                },
+                hardObjs: function() {
+                    var names = this.objectives.filter(e => e.difficulty == 3).map(x => x.name);
+                    return names.join('\n');
+                },
+                vhardObjs: function() {
+                    var names = this.objectives.filter(e => e.difficulty == 4).map(x => x.name);
+                    return names.join('\n');
+                }
+            }
+        })
+
+        function buildBoards(){
+            var easyCards = $("#easyOnes").val().split('\n');
+            var medCards = $("#medOnes").val().split('\n');
+            var hardCards = $("#hardOnes").val().split('\n');
+            var vhardCards = $("#vhardOnes").val().split('\n');
+
+            // shuffle
+            easyCards = shuffle(easyCards);
+            medCards = shuffle(medCards);
+            hardCards = shuffle(hardCards);
+            vhardCards = shuffle(vhardCards);
+
+            // pick rows
+            var rank1 = [
+                drawCard(easyCards),
+                drawCard(easyCards),
+                "START",
+                drawCard(easyCards),
+                drawCard(easyCards)
+            ];
+
+            var rank2 = [
+                drawCard(easyCards),
+                drawCard(easyCards),
+                drawCard(easyCards),
+                drawCard(easyCards),
+                drawCard(easyCards)
+            ];
+
+            var rank3 = [
+                drawCard(medCards),
+                drawCard(medCards),
+                drawCard(medCards),
+                drawCard(medCards),
+                drawCard(medCards)
+            ];
+
+            var rank4 = [
+                drawCard(medCards),
+                drawCard(medCards),
+                drawCard(medCards),
+                drawCard(medCards),
+                drawCard(medCards)
+            ];
+
+            var rank5 = [
+                drawCard(medCards),
+                drawCard(medCards),
+                drawCard(vhardCards),
+                drawCard(medCards),
+                drawCard(medCards)
+            ];
+
+            var rank6 = [
+                drawCard(medCards),
+                drawCard(hardCards),
+                drawCard(hardCards),
+                drawCard(hardCards),
+                drawCard(medCards)
+            ];
+
+            var rank7 = [
+                drawCard(hardCards),
+                drawCard(hardCards),
+                drawCard(hardCards),
+                drawCard(hardCards),
+                drawCard(hardCards)
+            ];
+
+            var rank8 = [
+                drawCard(hardCards),
+                drawCard(hardCards),
+                drawCard(vhardCards),
+                drawCard(hardCards),
+                drawCard(hardCards)
+            ];
+
+            var rank9 = [
+                drawCard(hardCards),
+                drawCard(vhardCards),
+                "GOAL",
+                drawCard(vhardCards),
+                drawCard(hardCards)
+            ];
+
+            var rank10 = ["N/A", "N/A", "N/A", "N/A", "N/A"];
+
+            // combine
+            var board1 = rank5.concat(rank4, rank3, rank2, rank1);
+            var board2 = rank10.concat(rank9, rank8, rank7, rank6);
+
+            var board1Json = [];
+            var board2Json = [];
+            
+            board1.forEach(x => {
+                var temp1 = '{"name": "' + x + '"}';
+                board1Json.push(temp1);
+            });
+            board2.forEach(x => {
+                var temp2 = '{"name": "' + x + '"}';
+                board2Json.push(temp2);
+            });
+
+            var output1 = '[';
+            output1 = output1 + board1Json.join(",");
+            output1 = output1 + ']';
+
+            var output2 = '[';
+            output2 = output2 + board2Json.join(",");
+            output2 = output2 + ']';
+
+            $("#board1").val(output1);
+            $("#board2").val(output2);
+        }
+
+        function drawCard(stack){
+            var randomSpot = Math.floor(Math.random() * stack.length);
+            var selectedCard = stack[randomSpot];
+            stack.splice(randomSpot, 1);
+            return selectedCard;
+        }
+
+        function shuffle(a) {
+            var j, x, i;
+            for (i = a.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                x = a[i];
+                a[i] = a[j];
+                a[j] = x;
+            }
+            return a;
+        }
+    </script>
+</body>
+</html>
