@@ -40,11 +40,11 @@ var objectiveData = [
 {"name": "Get Gem from the Shelter Safe", "difficulty": 2},
 {"name": "Shelter the Lavatory", "difficulty": 2},
 {"name": "Eat from Dining, Kitchen, Pantry in a Day", "difficulty": 2},
+{"name": "Use 2 Upgrade Disks", "difficulty": 2},
 
 //medium - ranks 6-9
 {"name": "Open 3 Safes in a Day", "difficulty": 3},
 {"name": "Draft 4 Archived Floorplans in a Day", "difficulty": 3},
-{"name": "Use 2 Upgrade Disks", "difficulty": 3},
 {"name": "Draft West and East Wing Halls", "difficulty": 3},
 {"name": "Dig 10 Times in a Day", "difficulty": 3},
 {"name": "Open 3 Lockers in a Day", "difficulty": 3},
