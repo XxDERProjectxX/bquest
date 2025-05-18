@@ -79,7 +79,7 @@ var objectiveData = [
 {"name": "Draft 10+ Dead Ends in a Day", "difficulty": 3},
 {"name": "Collect a Flower Gem", "difficulty": 3},
 {"name": "Full Directory of 8 Drafted Hallways", "difficulty": 3},
-{"name": "End the Day in a Rank 5 Pancake House", "difficulty": 3}
+{"name": "End the Day in a Rank 5 Pancake House", "difficulty": 3},
 
 // blockers (around antechamber, middle)
 {"name": "Draft Locker, Sauna, Pump Rooms in a Day", "difficulty": 4},
@@ -89,5 +89,5 @@ var objectiveData = [
 {"name": "Add the Mechanarium Floorplan", "difficulty": 4},
 {"name": "Open 2 Antechamber Doors in a Day", "difficulty": 4},
 {"name": "Enter the Antechamber", "difficulty": 4},
-{"name": "Gain a Chess Power", "difficulty": 4},
+{"name": "Gain a Chess Power", "difficulty": 4}
 ];
