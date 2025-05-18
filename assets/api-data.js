@@ -62,7 +62,7 @@ var objectiveData = [
 {"name": "Draft 6 Green Rooms in a Day", "difficulty": 3},
 {"name": "Draft 6 Hallways in a Day", "difficulty": 3},
 {"name": "Unlock All Doors in Great Hall", "difficulty": 3},
-{"name": "Retrieve a Coin from the Fountain", "difficulty": 3},
+{"name": "Retrieve a Coin from Draining Water", "difficulty": 3},
 {"name": "Gain >20 Steps in Dining Room", "difficulty": 3},
 {"name": "Attend Grade 4", "difficulty": 3},
 {"name": "Pick 3 Berries", "difficulty": 3},

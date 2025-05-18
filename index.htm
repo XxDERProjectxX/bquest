@@ -21,6 +21,16 @@
                     <a class="navbar-brand fs-4" href="#">
                         B Quest Bingo Generator
                     </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="main-nav">
+                        <ul class="navbar-nav" id="main-nav-list">
+                            <li class="nav-item">
+                                <a href="https://www.bingosync.com/" class="nav-link" target="_blank">BingoSync</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -29,32 +39,125 @@
     <div id="app-1">
         <div class="container site-content mt-4">
             <div class="row">
-                <div class="col-lg-3 mb-3">
-                    <h2>Easy</h2>
-                    <textarea class="form-control" style="height: 300px" id="easyOnes">{{easyObjs}}</textarea>
+                <div class="col-lg-4">
+                    <h1>B Quest</h1>
+                    <p class="lead">
+                        <i>B Quest</i> is a special form of non-lockout bingo that mimics the 9x5 grid of the manor blueprint in <i>Blue Prince</i> by using two 5x5 boards.
+                    </p>
+                    <p>
+                        Press "Build Boards" below and use the two JSON arrays to create two BingoSync "Custom (Advanced)" boards set to "Non-Lockout".
+                    </p>
+
+                    <div class="table-responsive">
+                        <table class="table table-sm table-bordered text-center caption-top">
+                            <caption>Difficulty Distribution</caption>
+                            <tr>
+                                <th>9</th>
+                                <td class="bg-warning"><span class="badge text-dark">Hard</span></td>
+                                <td class="bg-danger"><span class="badge">Very Hard</span></td>
+                                <td class="bg-primary"><span class="badge">Goal</span></td>
+                                <td class="bg-danger"><span class="badge">Very Hard</span></td>
+                                <td class="bg-warning"><span class="badge text-dark">Hard</span></td>
+                            </tr>
+                            <tr>
+                                <th>8</th>
+                                <td class="bg-warning"><span class="badge text-dark">Hard</span></td>
+                                <td class="bg-warning"><span class="badge text-dark">Hard</span></td>
+                                <td class="bg-danger"><span class="badge">Very Hard</span></td>
+                                <td class="bg-warning"><span class="badge text-dark">Hard</span></td>
+                                <td class="bg-warning"><span class="badge text-dark">Hard</span></td>
+                            </tr>
+                            <tr>
+                                <th>7</th>
+                                <td class="bg-warning"><span class="badge text-dark">Hard</span></td>
+                                <td class="bg-warning"><span class="badge text-dark">Hard</span></td>
+                                <td class="bg-warning"><span class="badge text-dark">Hard</span></td>
+                                <td class="bg-warning"><span class="badge text-dark">Hard</span></td>
+                                <td class="bg-warning"><span class="badge text-dark">Hard</span></td>
+                            </tr>
+                            <tr>
+                                <th>6</th>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
+                                <td class="bg-warning"><span class="badge text-dark">Hard</span></td>
+                                <td class="bg-warning"><span class="badge text-dark">Hard</span></td>
+                                <td class="bg-warning"><span class="badge text-dark">Hard</span></td>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
+                            </tr>
+                            <tr>
+                                <th>5</th>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
+                                <td class="bg-danger"><span class="badge">Very Hard</span></td>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
+                            </tr>
+                            <tr>
+                                <th>4</th>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <td class="bg-info"><span class="badge">Easy</span></td>
+                                <td class="bg-info"><span class="badge">Easy</span></td>
+                                <td class="bg-info"><span class="badge">Easy</span></td>
+                                <td class="bg-info"><span class="badge">Easy</span></td>
+                                <td class="bg-info"><span class="badge">Easy</span></td>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <td class="bg-info"><span class="badge">Easy</span></td>
+                                <td class="bg-info"><span class="badge">Easy</span></td>
+                                <td class="bg-secondary"><span class="badge">Start</span></td>
+                                <td class="bg-info"><span class="badge">Easy</span></td>
+                                <td class="bg-info"><span class="badge">Easy</span></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-                <div class="col-lg-3 mb-3">
-                    <h2>Medium</h2>
-                    <textarea class="form-control" style="height: 300px" id="medOnes">{{mediumObjs}}</textarea>
-                </div>
-                <div class="col-lg-3 mb-3">
-                    <h2>Hard</h2>
-                    <textarea class="form-control" style="height: 300px" id="hardOnes">{{hardObjs}}</textarea>
-                </div>
-                <div class="col-lg-3 mb-3">
-                    <h2>Blockers</h2>
-                    <textarea class="form-control" style="height: 300px" id="vhardOnes">{{vhardObjs}}</textarea>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <div class="h3"><span class="badge bg-info text-dark">Easy</span></div>
+                            <textarea class="form-control" style="height: 260px" id="easyOnes">{{easyObjs}}</textarea>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <div class="h3"><span class="badge bg-success">Medium</span></div>
+                            <textarea class="form-control" style="height: 260px" id="medOnes">{{mediumObjs}}</textarea>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <div class="h3"><span class="badge bg-warning text-dark">Hard</span></div>
+                            <textarea class="form-control" style="height: 260px" id="hardOnes">{{hardObjs}}</textarea>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <div class="h3"><span class="badge bg-danger">Very Hard</span></div>
+                            <textarea class="form-control" style="height: 260px" id="vhardOnes">{{vhardObjs}}</textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <input type="button" class="form-control btn btn-primary" value="Build Boards" onclick="buildBoards()">
 
             <div class="row mt-5">
-                <div class="col-lg-6 mb-3">
-                    <h2>Board 1 (Bottom)</h2>
+                <div class="col-lg-2 mb-3">
+                    <input type="button" class="form-control btn btn-lg btn-primary py-4" value="Build Boards" onclick="buildBoards()">
+                </div>
+                <div class="col-lg-5 mb-3">
+                    <label class="form-label fw-bold">Board 1 (Bottom)</label>
                     <textarea class="form-control" style="height: 200px" id="board1"></textarea>
                 </div>
-                <div class="col-lg-6 mb-3">
-                    <h2>Border 2 (Top)</h2>
+                <div class="col-lg-5 mb-3">
+                    <label class="form-label fw-bold">Board 2 (Top)</label>
                     <textarea class="form-control" style="height: 200px" id="board2"></textarea>
                 </div>
             </div>
