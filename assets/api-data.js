@@ -45,11 +45,11 @@ var objectiveData = [
 {"name": "Draft 8 Blue Rooms in a Row", "difficulty": 2},
 {"name": "Full Directory of Any Color Room", "difficulty": 2},
 {"name": "Draft 2+ Copies of Room in a Day", "difficulty": 2},
+{"name": "Dig 10 Times in a Day", "difficulty": 2},
 
-//medium - ranks 6-9
+//hard - ranks 6-9
 {"name": "Open 3 Safes in a Day", "difficulty": 3},
 {"name": "Draft West and East Wing Halls", "difficulty": 3},
-{"name": "Dig 10 Times in a Day", "difficulty": 3},
 {"name": "Open 3 Lockers in a Day", "difficulty": 3},
 {"name": "Read a Library Book Aloud", "difficulty": 3},
 {"name": "Buy a Special Key", "difficulty": 3},
