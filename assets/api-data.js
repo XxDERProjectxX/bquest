@@ -41,10 +41,13 @@ var objectiveData = [
 {"name": "Shelter the Lavatory", "difficulty": 2},
 {"name": "Eat from Dining, Kitchen, Pantry in a Day", "difficulty": 2},
 {"name": "Use 2 Upgrade Disks", "difficulty": 2},
+{"name": "Draft 4 Archived Floorplans in a Day", "difficulty": 2},
+{"name": "Draft 8 Blue Rooms in a Row", "difficulty": 2},
+{"name": "Full Directory of Any Color Room", "difficulty": 2},
+{"name": "Draft 2+ Copies of Room in a Day", "difficulty": 2},
 
 //medium - ranks 6-9
 {"name": "Open 3 Safes in a Day", "difficulty": 3},
-{"name": "Draft 4 Archived Floorplans in a Day", "difficulty": 3},
 {"name": "Draft West and East Wing Halls", "difficulty": 3},
 {"name": "Dig 10 Times in a Day", "difficulty": 3},
 {"name": "Open 3 Lockers in a Day", "difficulty": 3},
@@ -52,7 +55,6 @@ var objectiveData = [
 {"name": "Buy a Special Key", "difficulty": 3},
 {"name": "End a Day with 90+ Steps", "difficulty": 3},
 {"name": "Open Tomb Door to Reservoir", "difficulty": 3},
-{"name": "Draft 2+ Copies of Room in a Day", "difficulty": 3},
 {"name": "Have 10+ Keys", "difficulty": 3},
 {"name": "Have 4+ Dice", "difficulty": 3},
 {"name": "Have 30+ Coins", "difficulty": 3},
@@ -61,7 +63,7 @@ var objectiveData = [
 {"name": "Draft 7 Bedrooms in a Day", "difficulty": 3},
 {"name": "Draft 6 Green Rooms in a Day", "difficulty": 3},
 {"name": "Draft 6 Hallways in a Day", "difficulty": 3},
-{"name": "Unlock All Doors in Great Hall", "difficulty": 3},
+{"name": "Open All Doors in Great Hall", "difficulty": 3},
 {"name": "Retrieve a Coin from Draining Water", "difficulty": 3},
 {"name": "Gain >20 Steps in Dining Room", "difficulty": 3},
 {"name": "Attend Grade 4", "difficulty": 3},
@@ -75,17 +77,17 @@ var objectiveData = [
 {"name": "Full Directory of 8 Drafted Red Rooms", "difficulty": 3},
 {"name": "Full Directory of 8 Drafted Outer Rooms", "difficulty": 3},
 {"name": "Draft 10+ Dead Ends in a Day", "difficulty": 3},
+{"name": "Collect a Flower Gem", "difficulty": 3},
+{"name": "Full Directory of 8 Drafted Hallways", "difficulty": 3},
+{"name": "End the Day in a Rank 5 Pancake House", "difficulty": 3}
 
 // blockers (around antechamber, middle)
 {"name": "Draft Locker, Sauna, Pump Rooms in a Day", "difficulty": 4},
-{"name": "Full Directory of 8 Drafted Hallways", "difficulty": 4},
 {"name": "Cash a Payroll Check", "difficulty": 4},
 {"name": "Access Controls on the Back of a Room", "difficulty": 4},
 {"name": "Make a Contraption", "difficulty": 4},
-{"name": "Collect a Flower Gem", "difficulty": 4},
 {"name": "Add the Mechanarium Floorplan", "difficulty": 4},
 {"name": "Open 2 Antechamber Doors in a Day", "difficulty": 4},
 {"name": "Enter the Antechamber", "difficulty": 4},
 {"name": "Gain a Chess Power", "difficulty": 4},
-{"name": "End the Day in a Rank 5 Pancake House", "difficulty": 4}
 ];
