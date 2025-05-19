@@ -16,18 +16,17 @@ var objectiveData = [
 // medium - ranks 3-5
 {"name": "Gain Effect from Ending Day in a Room", "difficulty": 2},
 {"name": "Spend 3 Gems Drafting a Room", "difficulty": 2},
-{"name": "Open 2 Trunks", "difficulty": 2},
+{"name": "Open 2 Trunks in a Day", "difficulty": 2},
 {"name": "Open the Car Trunk", "difficulty": 2},
 {"name": "End the Day in a Rank 3 Pancake House", "difficulty": 2},
 {"name": "Retrieve Key After Checking Overnight", "difficulty": 2},
 {"name": "Have 8 Special Items", "difficulty": 2},
 {"name": "Trade a Microchip at a Trading Post", "difficulty": 2},
-{"name": "Increase a Room's Rarity for a Day", "difficulty": 2},
+{"name": "Increase a Room's Rarity Permanently", "difficulty": 2},
 {"name": "Have 10+ Gems", "difficulty": 2},
 {"name": "Have 6+ Keys, Gems and Coins Each", "difficulty": 2},
 {"name": "Re-roll a Draft 4+ Times", "difficulty": 2},
 {"name": "Have 6+ Stars", "difficulty": 2},
-{"name": "Collect Items Spread to Conference Room", "difficulty": 2},
 {"name": "Solve 4 Parlors", "difficulty": 2},
 {"name": "Light 4 Blue Flames", "difficulty": 2},
 {"name": "Use an Elevator", "difficulty": 2},
@@ -49,6 +48,7 @@ var objectiveData = [
 
 //hard - ranks 6-9
 {"name": "Open 3 Safes in a Day", "difficulty": 3},
+{"name": "Collect Items Spread to Conference Room", "difficulty": 3},
 {"name": "Draft West and East Wing Halls", "difficulty": 3},
 {"name": "Open 3 Lockers in a Day", "difficulty": 3},
 {"name": "Read a Library Book Aloud", "difficulty": 3},
