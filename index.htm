@@ -14,12 +14,12 @@
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to Main Content</a>
     
-    <header class="py-2 sticky-top bg-primary-subtle shadow">
+    <header class="py-2 bg-primary bg-opacity-75 shadow">
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand fs-4" href="#">
-                        B Quest Bingo Generator
+                    <a class="navbar-brand fs-2" href="#">
+                        Blue Prince Bingo
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -36,20 +36,16 @@
         </div>
     </header>
     
-    <div id="app-1">
-        <div class="container site-content mt-4">
-            <div class="row">
+    <div id="app-1" class="bg-primary bg-opacity-25 pt-4">
+        <div class="container site-content">
+            <div class="row g-5">
                 <div class="col-lg-4">
-                    <h1>B Quest</h1>
-                    <p class="lead">
+                    <h1 class="display-2">B Quest</h1>
+                    <p class="fs-4 lh-base">
                         <i>B Quest</i> is a special form of non-lockout bingo that mimics the 9x5 grid of the manor blueprint in <i>Blue Prince</i> by using two 5x5 boards.
                     </p>
-                    <p>
-                        Press "Build Boards" below and use the two JSON arrays to create two BingoSync "Custom (Advanced)" boards set to "Non-Lockout".
-                    </p>
-
                     <div class="table-responsive">
-                        <table class="table table-sm table-bordered text-center caption-top">
+                        <table class="table table-sm table-bordered text-center caption-top shadow">
                             <caption>Difficulty Distribution</caption>
                             <tr>
                                 <th>9</th>
@@ -127,47 +123,65 @@
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <div class="row">
+                    <div class="row gy-3">
                         <div class="col-lg-6 mb-3">
                             <div class="h3"><span class="badge bg-info text-dark">Easy</span></div>
-                            <textarea class="form-control" style="height: 260px" id="easyOnes">{{easyObjs}}</textarea>
+                            <textarea class="form-control shadow" style="height: 260px" id="easyOnes">{{easyObjs}}</textarea>
                         </div>
                         <div class="col-lg-6 mb-3">
                             <div class="h3"><span class="badge bg-success">Medium</span></div>
-                            <textarea class="form-control" style="height: 260px" id="medOnes">{{mediumObjs}}</textarea>
+                            <textarea class="form-control shadow" style="height: 260px" id="medOnes">{{mediumObjs}}</textarea>
                         </div>
                         <div class="col-lg-6 mb-3">
                             <div class="h3"><span class="badge bg-warning text-dark">Hard</span></div>
-                            <textarea class="form-control" style="height: 260px" id="hardOnes">{{hardObjs}}</textarea>
+                            <textarea class="form-control shadow" style="height: 260px" id="hardOnes">{{hardObjs}}</textarea>
                         </div>
                         <div class="col-lg-6 mb-3">
                             <div class="h3"><span class="badge bg-danger">Very Hard</span></div>
-                            <textarea class="form-control" style="height: 260px" id="vhardOnes">{{vhardObjs}}</textarea>
+                            <textarea class="form-control shadow" style="height: 260px" id="vhardOnes">{{vhardObjs}}</textarea>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="row mt-5">
-                <div class="col-lg-2 mb-3">
-                    <input type="button" class="form-control btn btn-lg btn-primary py-4" value="Build Boards" onclick="buildBoards()">
+            <div class="row mt-3 g-5">
+                <div class="col-lg-4 mb-3">
+                    <h2>B Quest: Two Boards</h2>
+                    <input type="button" class="form-control btn btn-lg btn-primary py-4 mb-3 shadow" value="Build Boards" onclick="buildBoards()">
+                    <p>
+                        Press this to create two JSON arrays and create two BingoSync "Custom (Advanced)" boards set to "Non-Lockout".
+                    </p>
                 </div>
-                <div class="col-lg-5 mb-3">
+                <div class="col-lg-4 mb-3">
                     <label class="form-label fw-bold">Board 1 (Bottom)</label>
-                    <textarea class="form-control" style="height: 200px" id="board1"></textarea>
+                    <textarea class="form-control shadow" style="height: 200px" id="board1"></textarea>
                 </div>
-                <div class="col-lg-5 mb-3">
+                <div class="col-lg-4 mb-3">
                     <label class="form-label fw-bold">Board 2 (Top)</label>
-                    <textarea class="form-control" style="height: 200px" id="board2"></textarea>
+                    <textarea class="form-control shadow" style="height: 200px" id="board2"></textarea>
+                </div>
+            </div>
+
+            <div class="row mt-3 g-5">
+                <div class="col-lg-4 mb-3">
+                    <h2>Non-Lockout Squares</h2>
+                    <input type="button" class="form-control btn btn-lg btn-info py-4 mb-3 shadow" value="Export All" onclick="dumpJson()">
+                    <p>
+                        Press this to dump all objectives to a flat, un-weighted JSON string that can be used to generate a non-lockout board on BingoSync. The squares will already be shuffled, so you can use Fixed or Randomized.
+                    </p>
+                </div>
+                <div class="col-lg-8 mb-3">
+                    <label class="form-label fw-bold">Custom (Advanced): Fixed or Randomized (Squares Already Shuffled)</label>
+                    <textarea class="form-control shadow" style="height: 200px" id="jsondump"></textarea>
                 </div>
             </div>
         </div>
     </div>
     
     <!-- footers -->
-    <footer class="site-footer bg-primary-subtle py-4 mt-3">
+    <footer class="site-footer bg-primary bg-opacity-50 py-4">
         <div class="container">
-            Site by RadRingtail
+            Site by <a href="https://twitch.tv/radringtail">RadRingtail</a>
         </div>
     </footer>
     
@@ -292,28 +306,28 @@
             var board1 = rank5.concat(rank4, rank3, rank2, rank1);
             var board2 = rank10.concat(rank9, rank8, rank7, rank6);
 
-            var board1Json = [];
-            var board2Json = [];
-            
-            board1.forEach(x => {
-                var temp1 = '{"name": "' + x + '"}';
-                board1Json.push(temp1);
-            });
-            board2.forEach(x => {
-                var temp2 = '{"name": "' + x + '"}';
-                board2Json.push(temp2);
-            });
-
-            var output1 = '[';
-            output1 = output1 + board1Json.join(",");
-            output1 = output1 + ']';
-
-            var output2 = '[';
-            output2 = output2 + board2Json.join(",");
-            output2 = output2 + ']';
+            var output1 = makeBingoSyncCard(board1);
+            var output2 = makeBingoSyncCard(board2);
 
             $("#board1").val(output1);
             $("#board2").val(output2);
+        }
+
+        function dumpJson(){
+            var easyCards = $("#easyOnes").val().split('\n');
+            var medCards = $("#medOnes").val().split('\n');
+            var hardCards = $("#hardOnes").val().split('\n');
+            var vhardCards = $("#vhardOnes").val().split('\n');
+
+            easyCards = shuffle(easyCards);
+            medCards = shuffle(medCards);
+            hardCards = shuffle(hardCards);
+            vhardCards = shuffle(vhardCards);
+
+            var allCards = easyCards.concat(medCards, hardCards, vhardCards);
+            var cardJson = makeBingoSyncCard(allCards);
+
+            $("#jsondump").val(cardJson);
         }
 
         function drawCard(stack){
@@ -321,6 +335,21 @@
             var selectedCard = stack[randomSpot];
             stack.splice(randomSpot, 1);
             return selectedCard;
+        }
+
+        function makeBingoSyncCard(stack){
+            var tempArray = [];
+
+            stack.forEach(x => {
+                var tempSquare = '{"name": "' + x + '"}';
+                tempArray.push(tempSquare);
+            });
+
+            var output = '[';
+            output = output + tempArray.join(",");
+            output = output + ']';
+
+            return output;
         }
 
         function shuffle(a) {
