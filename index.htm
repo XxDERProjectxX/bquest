@@ -352,6 +352,7 @@
             vhardCards = shuffle(vhardCards).slice(0, 3);
 
             var allCards = easyCards.concat(medCards, hardCards, vhardCards);
+            allCards = shuffle(allCards);
             var cardJson = makeBingoSyncCard(allCards);
 
             $("#jsondump").val(cardJson);
