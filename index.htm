@@ -165,14 +165,24 @@
             <div class="row mt-3 g-5">
                 <div class="col-lg-4 mb-3">
                     <h2>Non-Lockout Squares</h2>
-                    <input type="button" class="form-control btn btn-lg btn-info py-4 mb-3 shadow" value="Export All" onclick="dumpJson()">
-                    <p>
-                        Press this to dump all objectives to a flat, un-weighted JSON string that can be used to generate a non-lockout board on BingoSync. The squares will already be shuffled, so you can use Fixed or Randomized.
+                    <div class="row">
+                        <div class="col-lg">
+                            <input type="button" class="form-control btn btn-lg btn-info mb-3 shadow" value="All Squares" onclick="dumpJson()">
+                        </div>
+                        <div class="col-lg">
+                            <input type="button" class="form-control btn btn-lg btn-success mb-3 shadow" value="Balanced Card" onclick="dumpJsonWeighted()">
+                        </div>
+                    </div>
+                    <p class="lh-base">
+                        <b>All</b>> dumps all sqaures to a flat, un-weighted JSON string that can be used to generate a non-lockout board on BingoSync. The squares will already be shuffled, so you can use Fixed or Randomized.
+                    </p>
+                    <p class="lh-base">
+                        <b>Balanced</b> randomly chooses 5 easy, 9 medium, 8 hard, and 3 very hard squares for a complete board.
                     </p>
                 </div>
                 <div class="col-lg-8 mb-3">
                     <label class="form-label fw-bold">Custom (Advanced): Fixed or Randomized (Squares Already Shuffled)</label>
-                    <textarea class="form-control shadow" style="height: 200px" id="jsondump"></textarea>
+                    <textarea class="form-control shadow" style="height: 250px" id="jsondump"></textarea>
                 </div>
             </div>
         </div>
@@ -323,6 +333,23 @@
             medCards = shuffle(medCards);
             hardCards = shuffle(hardCards);
             vhardCards = shuffle(vhardCards);
+
+            var allCards = easyCards.concat(medCards, hardCards, vhardCards);
+            var cardJson = makeBingoSyncCard(allCards);
+
+            $("#jsondump").val(cardJson);
+        }
+
+        function dumpJsonWeighted(){
+            var easyCards = $("#easyOnes").val().split('\n');
+            var medCards = $("#medOnes").val().split('\n');
+            var hardCards = $("#hardOnes").val().split('\n');
+            var vhardCards = $("#vhardOnes").val().split('\n');
+
+            easyCards = shuffle(easyCards).slice(0, 5);
+            medCards = shuffle(medCards).slice(0, 9);
+            hardCards = shuffle(hardCards).slice(0, 8);
+            vhardCards = shuffle(vhardCards).slice(0, 3);
 
             var allCards = easyCards.concat(medCards, hardCards, vhardCards);
             var cardJson = makeBingoSyncCard(allCards);
