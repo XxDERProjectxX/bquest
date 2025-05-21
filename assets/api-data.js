@@ -21,7 +21,7 @@ var objectiveData = [
 {"name": "Open the Car Trunk", "difficulty": 2},
 {"name": "End in a Rank 3 Pancake House", "difficulty": 2},
 {"name": "Retrieve Key After Checking Overnight", "difficulty": 2},
-{"name": "Have 8 Special Items", "difficulty": 2},
+{"name": "Have 8 Inventory Items", "difficulty": 2},
 {"name": "Trade a Microchip at a Trading Post", "difficulty": 2},
 {"name": "Increase a Room's Rarity Permanently", "difficulty": 2},
 {"name": "Have 10+ Gems", "difficulty": 2},
