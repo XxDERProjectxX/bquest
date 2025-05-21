@@ -31,6 +31,25 @@ body {
   display: none;
 }
 
+#board{
+  width: auto;
+  margin: auto;
+}
+
+#board td{
+  height: 100px;
+  width: 100px;
+  vertical-align: middle;
+  cursor: pointer;
+  line-height: normal;
+  padding: 0.25em;
+  font-size: 0.9em;
+}
+
+#board td:hover{
+  opacity: 0.7;
+}
+
 /* additional width classes ---------------------------------------------------------------------------------------- */
 
 /* thirds */

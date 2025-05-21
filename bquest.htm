@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B Quest Board | Blue Prince Bingo</title> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Short+Stack&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to Main Content</a>
+    
+    <div id="app-1" class="bg-primary bg-opacity-25 pt-4">
+        <div class="container site-content">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-5 mx-auto">
+                    <table class="table table-sm table-bordered text-center caption-top shadow" id="board">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bg-success">GOAL</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bg-primary">START</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <label class="form-label fw-bold">9x5 Board</label>
+            <textarea class="form-control shadow" style="height: 200px" id="boardFull"></textarea>
+            <div class="row mt-3">
+                <div class="col-lg mb-3">
+                    <input type="button" class="form-control btn btn-lg btn-outline-danger mb-3 shadow" value="Generate Squares" onclick="generateCards()">
+                </div>
+                <div class="col-lg mb-3 text-center">
+                    <div class="btn-group mx-auto" role="group">
+                    <input type="radio" class="btn-check" name="colorOption" id="option1" value="bg-danger" checked>
+                    <label class="btn btn-lg btn-danger" for="option1">Red</label>
+                    
+                    <input type="radio" class="btn-check" name="colorOption" id="option2" value="bg-primary">
+                    <label class="btn btn-lg btn-primary" for="option2">Blue</label>
+                    
+                    <input type="radio" class="btn-check" name="colorOption" id="option3" value="bg-success">
+                    <label class="btn btn-lg btn-success" for="option3">Green</label>
+                    </div>
+                </div>
+                <div class="col-lg mb-3">
+                    <input type="button" class="form-control btn btn-lg btn-outline-success mb-3 shadow" value="Build Board" onclick="buildBoard()">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- footers -->
+    <footer class="site-footer bg-primary bg-opacity-50 py-4">
+        <div class="container">
+            Site by <a href="https://twitch.tv/radringtail">RadRingtail</a>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/api-data.js"></script>
+    <script>
+        $(function(){
+            $("#board td").click(function(){
+                var color = $('input[name="colorOption"]:checked').val();
+                $(this).attr("class") == color
+                    ? $(this).removeClass()
+                    : $(this).removeClass().addClass(color);
+
+            });
+        });
+        
+        function generateCards(){
+            var easyCards = objectiveData.filter(e => e.difficulty == 1).map(x => x.name);
+            var medCards = objectiveData.filter(e => e.difficulty == 2).map(x => x.name);
+            var hardCards = objectiveData.filter(e => e.difficulty == 3).map(x => x.name);
+            var vhardCards = objectiveData.filter(e => e.difficulty == 4).map(x => x.name);
+            
+            easyCards = shuffle(easyCards);
+            medCards = shuffle(medCards);
+            hardCards = shuffle(hardCards);
+            vhardCards = shuffle(vhardCards);
+            
+            var rank1 = [drawCard(easyCards), drawCard(easyCards), "START", drawCard(easyCards), drawCard(easyCards)];
+            var rank2 = [drawCard(easyCards), drawCard(easyCards), drawCard(easyCards), drawCard(easyCards), drawCard(easyCards)];   
+            var rank3 = [drawCard(medCards),drawCard(medCards),drawCard(medCards),drawCard(medCards),drawCard(medCards)];
+            var rank4 = [drawCard(medCards),drawCard(medCards),drawCard(medCards),drawCard(medCards),drawCard(medCards)];
+            var rank5 = [drawCard(medCards),drawCard(medCards),drawCard(vhardCards),drawCard(medCards),drawCard(medCards)];
+            var rank6 = [drawCard(medCards),drawCard(hardCards),drawCard(hardCards),drawCard(hardCards),drawCard(medCards)];
+            var rank7 = [drawCard(hardCards),drawCard(hardCards),drawCard(hardCards),drawCard(hardCards),drawCard(hardCards)];
+            var rank8 = [drawCard(hardCards),drawCard(hardCards),drawCard(vhardCards),drawCard(hardCards),drawCard(hardCards)];
+            var rank9 = [drawCard(hardCards),drawCard(vhardCards),"GOAL",drawCard(vhardCards),drawCard(hardCards)];
+            
+            var board = rank9.concat(rank8, rank7, rank6, rank5, rank4, rank3, rank2, rank1);
+            var output = makeBingoSyncCard(board);
+            
+            $("#boardFull").val(output);
+        }
+        
+        function buildBoard(){
+            var boardData = $("#boardFull").val();
+            var boardJson = JSON.parse(boardData);
+            
+            for (let i = 0; i < boardJson.length; i++) {
+                $("#board").find("td").eq(i).html(boardJson[i].name);
+            }
+        }
+        
+        function drawCard(stack){
+            var randomSpot = Math.floor(Math.random() * stack.length);
+            var selectedCard = stack[randomSpot];
+            stack.splice(randomSpot, 1);
+            return selectedCard;
+        }
+        
+        function makeBingoSyncCard(stack){
+            var tempArray = [];
+            
+            stack.forEach(x => {
+                var tempSquare = '{"name": "' + x + '"}';
+                tempArray.push(tempSquare);
+            });
+            
+            var output = '[';
+            output = output + tempArray.join(",");
+            output = output + ']';
+            
+            return output;
+        }
+        
+        function shuffle(a) {
+            var j, x, i;
+            for (i = a.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                x = a[i];
+                a[i] = a[j];
+                a[j] = x;
+            }
+            return a;
+        }
+    </script>
+</body>
+</html>

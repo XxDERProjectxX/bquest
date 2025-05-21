@@ -27,6 +27,9 @@
                     <div class="collapse navbar-collapse justify-content-end" id="main-nav">
                         <ul class="navbar-nav" id="main-nav-list">
                             <li class="nav-item">
+                                <a href="bquest.htm" class="nav-link" target="_blank">B Quest Board View</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="https://www.bingosync.com/" class="nav-link" target="_blank">BingoSync</a>
                             </li>
                         </ul>
@@ -174,7 +177,7 @@
                         </div>
                     </div>
                     <p class="lh-base">
-                        <b>All</b>> dumps all sqaures to a flat, un-weighted JSON string that can be used to generate a non-lockout board on BingoSync. The squares will already be shuffled, so you can use Fixed or Randomized.
+                        <b>All</b> dumps all sqaures to a flat, un-weighted JSON string that can be used to generate a non-lockout board on BingoSync. The squares will already be shuffled, so you can use Fixed or Randomized.
                     </p>
                     <p class="lh-base">
                         <b>Balanced</b> randomly chooses 5 easy, 9 medium, 8 hard, and 3 very hard squares for a complete board.
@@ -231,13 +234,11 @@
             var hardCards = $("#hardOnes").val().split('\n');
             var vhardCards = $("#vhardOnes").val().split('\n');
 
-            // shuffle
             easyCards = shuffle(easyCards);
             medCards = shuffle(medCards);
             hardCards = shuffle(hardCards);
             vhardCards = shuffle(vhardCards);
 
-            // pick rows
             var rank1 = [
                 drawCard(easyCards),
                 drawCard(easyCards),
