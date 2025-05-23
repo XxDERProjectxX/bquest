@@ -90,7 +90,7 @@
             <textarea class="form-control shadow" style="height: 200px" id="boardFull"></textarea>
             <div class="row mt-3">
                 <div class="col-lg mb-3">
-                    <input type="button" class="form-control btn btn-lg btn-outline-danger mb-3 shadow" value="Generate Squares" onclick="generateCards()">
+                    <input type="button" class="form-control btn btn-lg btn-outline-danger mb-3 shadow" value="Generate Squares" onclick="generateJson()">
                 </div>
                 <div class="col-lg mb-3 text-center">
                     <div class="btn-group mx-auto" role="group">
@@ -122,6 +122,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/api-data.js"></script>
+    <script src="assets/functions.js"></script>
     <script>
         $(function(){
             $("#board td").click(function(){
@@ -133,30 +134,8 @@
             });
         });
         
-        function generateCards(){
-            var easyCards = objectiveData.filter(e => e.difficulty == 1).map(x => x.name);
-            var medCards = objectiveData.filter(e => e.difficulty == 2).map(x => x.name);
-            var hardCards = objectiveData.filter(e => e.difficulty == 3).map(x => x.name);
-            var vhardCards = objectiveData.filter(e => e.difficulty == 4).map(x => x.name);
-            
-            easyCards = shuffle(easyCards);
-            medCards = shuffle(medCards);
-            hardCards = shuffle(hardCards);
-            vhardCards = shuffle(vhardCards);
-            
-            var rank1 = [drawCard(easyCards), drawCard(easyCards), "START", drawCard(easyCards), drawCard(easyCards)];
-            var rank2 = [drawCard(easyCards), drawCard(easyCards), drawCard(easyCards), drawCard(easyCards), drawCard(easyCards)];   
-            var rank3 = [drawCard(medCards),drawCard(medCards),drawCard(medCards),drawCard(medCards),drawCard(medCards)];
-            var rank4 = [drawCard(medCards),drawCard(medCards),drawCard(medCards),drawCard(medCards),drawCard(medCards)];
-            var rank5 = [drawCard(medCards),drawCard(medCards),drawCard(vhardCards),drawCard(medCards),drawCard(medCards)];
-            var rank6 = [drawCard(medCards),drawCard(hardCards),drawCard(hardCards),drawCard(hardCards),drawCard(medCards)];
-            var rank7 = [drawCard(hardCards),drawCard(hardCards),drawCard(hardCards),drawCard(hardCards),drawCard(hardCards)];
-            var rank8 = [drawCard(hardCards),drawCard(hardCards),drawCard(vhardCards),drawCard(hardCards),drawCard(hardCards)];
-            var rank9 = [drawCard(hardCards),drawCard(vhardCards),"GOAL",drawCard(vhardCards),drawCard(hardCards)];
-            
-            var board = rank9.concat(rank8, rank7, rank6, rank5, rank4, rank3, rank2, rank1);
-            var output = makeBingoSyncCard(board);
-            
+        function generateJson(){
+            var output = generateCards("bquest");
             $("#boardFull").val(output);
         }
         
@@ -167,40 +146,7 @@
             for (let i = 0; i < boardJson.length; i++) {
                 $("#board").find("td").eq(i).html(boardJson[i].name);
             }
-        }
-        
-        function drawCard(stack){
-            var randomSpot = Math.floor(Math.random() * stack.length);
-            var selectedCard = stack[randomSpot];
-            stack.splice(randomSpot, 1);
-            return selectedCard;
-        }
-        
-        function makeBingoSyncCard(stack){
-            var tempArray = [];
-            
-            stack.forEach(x => {
-                var tempSquare = '{"name": "' + x + '"}';
-                tempArray.push(tempSquare);
-            });
-            
-            var output = '[';
-            output = output + tempArray.join(",");
-            output = output + ']';
-            
-            return output;
-        }
-        
-        function shuffle(a) {
-            var j, x, i;
-            for (i = a.length - 1; i > 0; i--) {
-                j = Math.floor(Math.random() * (i + 1));
-                x = a[i];
-                a[i] = a[j];
-                a[j] = x;
-            }
-            return a;
-        }
+        }        
     </script>
 </body>
 </html>

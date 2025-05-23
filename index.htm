@@ -86,7 +86,7 @@
                                 <th>5</th>
                                 <td class="bg-success"><span class="badge">Medium</span></td>
                                 <td class="bg-success"><span class="badge">Medium</span></td>
-                                <td class="bg-danger"><span class="badge">Very Hard</span></td>
+                                <td class="bg-warning"><span class="badge text-dark">Hard</span></td>
                                 <td class="bg-success"><span class="badge">Medium</span></td>
                                 <td class="bg-success"><span class="badge">Medium</span></td>
                             </tr>
@@ -100,17 +100,17 @@
                             </tr>
                             <tr>
                                 <th>3</th>
+                                <td class="bg-info"><span class="badge">Easy</span></td>
                                 <td class="bg-success"><span class="badge">Medium</span></td>
                                 <td class="bg-success"><span class="badge">Medium</span></td>
                                 <td class="bg-success"><span class="badge">Medium</span></td>
-                                <td class="bg-success"><span class="badge">Medium</span></td>
-                                <td class="bg-success"><span class="badge">Medium</span></td>
+                                <td class="bg-info"><span class="badge">Easy</span></td>
                             </tr>
                             <tr>
                                 <th>2</th>
                                 <td class="bg-info"><span class="badge">Easy</span></td>
                                 <td class="bg-info"><span class="badge">Easy</span></td>
-                                <td class="bg-info"><span class="badge">Easy</span></td>
+                                <td class="bg-success"><span class="badge">Medium</span></td>
                                 <td class="bg-info"><span class="badge">Easy</span></td>
                                 <td class="bg-info"><span class="badge">Easy</span></td>
                             </tr>
@@ -129,19 +129,19 @@
                     <div class="row gy-3">
                         <div class="col-lg-6 mb-3">
                             <div class="h3"><span class="badge bg-info text-dark">Easy</span></div>
-                            <textarea class="form-control shadow" style="height: 260px" id="easyOnes">{{easyObjs}}</textarea>
+                            <textarea class="form-control shadow" disabled style="height: 260px" id="easyOnes">{{easyObjs}}</textarea>
                         </div>
                         <div class="col-lg-6 mb-3">
                             <div class="h3"><span class="badge bg-success">Medium</span></div>
-                            <textarea class="form-control shadow" style="height: 260px" id="medOnes">{{mediumObjs}}</textarea>
+                            <textarea class="form-control shadow" disabled style="height: 260px" id="medOnes">{{mediumObjs}}</textarea>
                         </div>
                         <div class="col-lg-6 mb-3">
                             <div class="h3"><span class="badge bg-warning text-dark">Hard</span></div>
-                            <textarea class="form-control shadow" style="height: 260px" id="hardOnes">{{hardObjs}}</textarea>
+                            <textarea class="form-control shadow" disabled style="height: 260px" id="hardOnes">{{hardObjs}}</textarea>
                         </div>
                         <div class="col-lg-6 mb-3">
                             <div class="h3"><span class="badge bg-danger">Very Hard</span></div>
-                            <textarea class="form-control shadow" style="height: 260px" id="vhardOnes">{{vhardObjs}}</textarea>
+                            <textarea class="form-control shadow" disabled style="height: 260px" id="vhardOnes">{{vhardObjs}}</textarea>
                         </div>
                     </div>
                 </div>
@@ -202,6 +202,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/api-data.js"></script>
+    <script src="assets/functions.js"></script>
     <script>
         var app1 = new Vue({
             el: '#app-1',
@@ -229,167 +230,33 @@
         })
 
         function buildBoards(){
-            var easyCards = $("#easyOnes").val().split('\n');
-            var medCards = $("#medOnes").val().split('\n');
-            var hardCards = $("#hardOnes").val().split('\n');
-            var vhardCards = $("#vhardOnes").val().split('\n');
-
-            easyCards = shuffle(easyCards);
-            medCards = shuffle(medCards);
-            hardCards = shuffle(hardCards);
-            vhardCards = shuffle(vhardCards);
-
-            var rank1 = [
-                drawCard(easyCards),
-                drawCard(easyCards),
-                "START",
-                drawCard(easyCards),
-                drawCard(easyCards)
-            ];
-
-            var rank2 = [
-                drawCard(easyCards),
-                drawCard(easyCards),
-                drawCard(easyCards),
-                drawCard(easyCards),
-                drawCard(easyCards)
-            ];
-
-            var rank3 = [
-                drawCard(medCards),
-                drawCard(medCards),
-                drawCard(medCards),
-                drawCard(medCards),
-                drawCard(medCards)
-            ];
-
-            var rank4 = [
-                drawCard(medCards),
-                drawCard(medCards),
-                drawCard(medCards),
-                drawCard(medCards),
-                drawCard(medCards)
-            ];
-
-            var rank5 = [
-                drawCard(medCards),
-                drawCard(medCards),
-                drawCard(vhardCards),
-                drawCard(medCards),
-                drawCard(medCards)
-            ];
-
-            var rank6 = [
-                drawCard(medCards),
-                drawCard(hardCards),
-                drawCard(hardCards),
-                drawCard(hardCards),
-                drawCard(medCards)
-            ];
-
-            var rank7 = [
-                drawCard(hardCards),
-                drawCard(hardCards),
-                drawCard(hardCards),
-                drawCard(hardCards),
-                drawCard(hardCards)
-            ];
-
-            var rank8 = [
-                drawCard(hardCards),
-                drawCard(hardCards),
-                drawCard(vhardCards),
-                drawCard(hardCards),
-                drawCard(hardCards)
-            ];
-
-            var rank9 = [
-                drawCard(hardCards),
-                drawCard(vhardCards),
-                "GOAL",
-                drawCard(vhardCards),
-                drawCard(hardCards)
-            ];
-
-            var rank10 = ["N/A", "N/A", "N/A", "N/A", "N/A"];
-
-            // combine
-            var board1 = rank5.concat(rank4, rank3, rank2, rank1);
-            var board2 = rank10.concat(rank9, rank8, rank7, rank6);
-
-            var output1 = makeBingoSyncCard(board1);
-            var output2 = makeBingoSyncCard(board2);
-
-            $("#board1").val(output1);
-            $("#board2").val(output2);
+            var output = generateCards("bingosync");
+            $("#board1").val(output[0]);
+            $("#board2").val(output[1]);
         }
 
         function dumpJson(){
-            var easyCards = $("#easyOnes").val().split('\n');
-            var medCards = $("#medOnes").val().split('\n');
-            var hardCards = $("#hardOnes").val().split('\n');
-            var vhardCards = $("#vhardOnes").val().split('\n');
-
-            easyCards = shuffle(easyCards);
-            medCards = shuffle(medCards);
-            hardCards = shuffle(hardCards);
-            vhardCards = shuffle(vhardCards);
-
-            var allCards = easyCards.concat(medCards, hardCards, vhardCards);
+            var allCards = shuffle(objectiveData.map(x => x.name));
             var cardJson = makeBingoSyncCard(allCards);
-
             $("#jsondump").val(cardJson);
         }
 
         function dumpJsonWeighted(){
-            var easyCards = $("#easyOnes").val().split('\n');
-            var medCards = $("#medOnes").val().split('\n');
-            var hardCards = $("#hardOnes").val().split('\n');
-            var vhardCards = $("#vhardOnes").val().split('\n');
+            var easy = objectiveData.filter(e => e.difficulty == 1).map(x => x.name);
+            var med = objectiveData.filter(e => e.difficulty == 2).map(x => x.name);
+            var hard = objectiveData.filter(e => e.difficulty == 3).map(x => x.name);
+            var vhard = objectiveData.filter(e => e.difficulty == 4).map(x => x.name);
 
-            easyCards = shuffle(easyCards).slice(0, 5);
-            medCards = shuffle(medCards).slice(0, 9);
-            hardCards = shuffle(hardCards).slice(0, 8);
-            vhardCards = shuffle(vhardCards).slice(0, 3);
+            easy = shuffle(easy).slice(0, 5);
+            med = shuffle(med).slice(0, 9);
+            hard = shuffle(hard).slice(0, 8);
+            vhard = shuffle(vhard).slice(0, 3);
 
-            var allCards = easyCards.concat(medCards, hardCards, vhardCards);
+            var allCards = easy.concat(med, hard, vhard);
             allCards = shuffle(allCards);
             var cardJson = makeBingoSyncCard(allCards);
 
             $("#jsondump").val(cardJson);
-        }
-
-        function drawCard(stack){
-            var randomSpot = Math.floor(Math.random() * stack.length);
-            var selectedCard = stack[randomSpot];
-            stack.splice(randomSpot, 1);
-            return selectedCard;
-        }
-
-        function makeBingoSyncCard(stack){
-            var tempArray = [];
-
-            stack.forEach(x => {
-                var tempSquare = '{"name": "' + x + '"}';
-                tempArray.push(tempSquare);
-            });
-
-            var output = '[';
-            output = output + tempArray.join(",");
-            output = output + ']';
-
-            return output;
-        }
-
-        function shuffle(a) {
-            var j, x, i;
-            for (i = a.length - 1; i > 0; i--) {
-                j = Math.floor(Math.random() * (i + 1));
-                x = a[i];
-                a[i] = a[j];
-                a[j] = x;
-            }
-            return a;
         }
     </script>
 </body>

@@ -4,7 +4,6 @@ var objectiveData = [
 {"name": "Spend 30 Seconds in the Lavatory", "difficulty": 1},
 {"name": "Solve Darts with No Mistakes", "difficulty": 1},
 {"name": "End in a Rank 1 Pancake House", "difficulty": 1},
-{"name": "Open the West Gate", "difficulty": 1},
 {"name": "Watch an Entire Alzara Cutscene", "difficulty": 1},
 {"name": "Draft a Donut", "difficulty": 1},
 {"name": "Draft Planetarium", "difficulty": 1},
@@ -79,20 +78,21 @@ var objectiveData = [
 {"name": "Buy Out the Commissary", "difficulty": 3},
 {"name": "Add 3 New Floorplans", "difficulty": 3},
 {"name": "Full Directory of 8 Drafted Red Rooms", "difficulty": 3},
-{"name": "Full Directory of 8 Drafted Outer Rooms", "difficulty": 3},
 {"name": "Draft 10+ Dead Ends in a Day", "difficulty": 3},
 {"name": "Collect a Flower Gem", "difficulty": 3},
 {"name": "Full Directory of 8 Drafted Hallways", "difficulty": 3},
 {"name": "End in a Rank 5 Pancake House", "difficulty": 3},
 {"name": "End a Day with 100+ Steps Taken", "difficulty": 3},
+{"name": "Draft Locker, Sauna, Pump Rooms in a Day", "difficulty": 3},
+{"name": "Cash a Payroll Check", "difficulty": 3},
+{"name": "Access Controls on the Back of a Room", "difficulty": 3},
+{"name": "Make a Contraption", "difficulty": 3},
 
-// blockers (around antechamber, middle)
-{"name": "Draft Locker, Sauna, Pump Rooms in a Day", "difficulty": 4},
-{"name": "Cash a Payroll Check", "difficulty": 4},
-{"name": "Access Controls on the Back of a Room", "difficulty": 4}, //candidate for removal
-{"name": "Make a Contraption", "difficulty": 4}, //candidate for removal
-{"name": "Add the Mechanarium Floorplan", "difficulty": 4},
-{"name": "Open 2 Antechamber Doors in a Day", "difficulty": 4},
+// blockers (around antechamber)
+{"name": "Draft All 8 Outer Rooms", "difficulty": 4},
+{"name": "Use 4 Upgrade Disks", "difficulty": 4, "group": "disks"},
+{"name": "Add Mechanarium", "difficulty": 4},
+{"name": "Pull 3 Unique Levers", "difficulty": 4},
 {"name": "Enter the Antechamber", "difficulty": 4},
 {"name": "Gain a Chess Power", "difficulty": 4}
 ];
