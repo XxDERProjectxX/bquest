@@ -41,7 +41,7 @@ var objectiveData = [
 {"name": "Shelter the Lavatory", "difficulty": 2},
 {"name": "Eat in 3 Different Rooms in a Day", "difficulty": 2},
 {"name": "Eat Salted Food", "difficulty": 2},
-{"name": "Use 2 Upgrade Disks", "difficulty": 2},
+{"name": "Use 2 Upgrade Disks", "difficulty": 2, "group": "disks"},
 {"name": "Draft 4 Archived Floorplans in a Day", "difficulty": 2},
 {"name": "Draft 8 Blue Rooms in a Row", "difficulty": 2},
 {"name": "Full Directory of Any Color Room", "difficulty": 2},
