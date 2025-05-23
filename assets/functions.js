@@ -1,4 +1,4 @@
-var usedGroups = [];
+var usedGroups = []; //global
 
 function generateCards(boardType){
     usedGroups = [];
@@ -29,6 +29,12 @@ function generateCards(boardType){
     var randomOrder = [];
     for (var i = 0; i < 45; i++) randomOrder.push(i);
     randomOrder = shuffle(randomOrder);
+
+    //bring vhard squares to front
+    randomOrder.splice(randomOrder.indexOf(1), 1);
+    randomOrder.splice(randomOrder.indexOf(3), 1);
+    randomOrder.splice(randomOrder.indexOf(7), 1);
+    randomOrder.unshift(7, 1, 3);
 
     for (let j = 0; j < 45; j++) {
         const currentSquare = randomOrder[j];
