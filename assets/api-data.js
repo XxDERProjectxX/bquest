@@ -11,9 +11,9 @@ var objectiveData = [
 {"name": "Read The Red Prince", "difficulty": 1},
 {"name": "Draft Both Exits from Dark Room", "difficulty": 1},
 {"name": "End with a Live Animal", "difficulty": 1},
+{"name": "End in Planetarium", "difficulty": 1},
 
 // ungrouped medium
-{"name": "End in the Planetarium", "difficulty": 2},
 {"name": "Spend 3 Gems Drafting a Room", "difficulty": 2},
 {"name": "Open 2 Trunks in a Day", "difficulty": 2},
 {"name": "Open the Car Trunk", "difficulty": 2},
@@ -29,10 +29,9 @@ var objectiveData = [
 {"name": "Open a Delivered Package", "difficulty": 2},
 {"name": "Reach Rank 9", "difficulty": 2},
 {"name": "Shelter the Lavatory", "difficulty": 2},
-{"name": "Eat in 3 Different Rooms in a Day", "difficulty": 2},
+{"name": "Eat in Pantry, Kitchen, and Dining Rooms in a Day", "difficulty": 2},
 {"name": "Eat Salted Food", "difficulty": 2},
 {"name": "Draft 8 Blue Rooms in a Row", "difficulty": 2},
-{"name": "Full Directory of Any Color Room", "difficulty": 2},
 {"name": "Draft 2+ Copies of Room in a Day", "difficulty": 2},
 {"name": "Dig 10 Times in a Day", "difficulty": 2},
 
@@ -54,7 +53,6 @@ var objectiveData = [
 {"name": "View Stamp(s) in the Library", "difficulty": 3},
 {"name": "Buy Out the Commissary", "difficulty": 3},
 {"name": "Collect a Flower Gem", "difficulty": 3},
-{"name": "End a Day with 100+ Steps Taken", "difficulty": 3},
 {"name": "Draft Locker, Sauna, Pump Rooms in a Day", "difficulty": 3},
 {"name": "Cash a Payroll Check", "difficulty": 3},
 {"name": "Access Controls on the Back of a Room", "difficulty": 3},
@@ -67,17 +65,20 @@ var objectiveData = [
 {"name": "Gain a Chess Power", "difficulty": 4},
 
 //grouped squares (only one of each group can appear)
+{"name": "End a Day with 100+ Steps Taken", "difficulty": 2, "group": "steps"},
+{"name": "End a Day with 120+ Steps Taken", "difficulty": 3, "group": "steps"},
+{"name": "End a Day with 140+ Steps Taken", "difficulty": 3, "group": "steps"},
+
 {"name": "3+ Allowance", "difficulty": 2, "group": "allowance"},
 {"name": "4+ Allowance", "difficulty": 2, "group": "allowance"},
 {"name": "5+ Allowance", "difficulty": 3, "group": "allowance"},
 {"name": "6+ Allowance", "difficulty": 3, "group": "allowance"},
 {"name": "7+ Allowance", "difficulty": 4, "group": "allowance"},
 
-{"name": "6+ Stars", "difficulty": 2, "group": "stars"},
-{"name": "7+ Stars", "difficulty": 2, "group": "stars"},
+{"name": "5+ Stars", "difficulty": 2, "group": "stars"},
 {"name": "8+ Stars", "difficulty": 3, "group": "stars"},
-{"name": "9+ Stars", "difficulty": 3, "group": "stars"},
-{"name": "10+ Stars", "difficulty": 4, "group": "stars"},
+{"name": "11+ Stars", "difficulty": 3, "group": "stars"},
+{"name": "15+ Stars", "difficulty": 4, "group": "stars"},
 
 {"name": "Open Empty Parlor Box", "difficulty": 1, "group": "parlor"},
 {"name": "Open 2 Empty Parlor Boxes", "difficulty": 1, "group": "parlor"},
@@ -142,6 +143,9 @@ var objectiveData = [
 
 {"name": "Full Directory of Red Rooms", "difficulty": 3, "group": "full_dir"},
 {"name": "Full Directory of Hallways", "difficulty": 3, "group": "full_dir"},
+
+{"name": "Full Directory of 1 Category", "difficulty": 2, "group": "any_full_dir"},
+{"name": "Full Directory of 2 Categories", "difficulty": 4, "group": "any_full_dir"},
 
 {"name": "Add 2 New Floorplans", "difficulty": 2, "group": "new_plan"},
 {"name": "Add 3 New Floorplans", "difficulty": 3, "group": "new_plan"},
