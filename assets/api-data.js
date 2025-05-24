@@ -9,11 +9,12 @@ var objectiveData = [
 {"name": "Draft Both Exits from Dark Room", "difficulty": 1},
 {"name": "End with a Live Animal", "difficulty": 1},
 {"name": "End in Planetarium", "difficulty": 1},
+{"name": "Read Newspaper Clipping", "difficulty": 1},
 
 // ungrouped medium
 {"name": "Spend 3 Gems Drafting a Room", "difficulty": 2},
 {"name": "Retrieve Key After Checking Overnight", "difficulty": 2},
-{"name": "Trade a Microchip at a Trading Post", "difficulty": 2},
+{"name": "Trade a Microchip", "difficulty": 2},
 {"name": "Permanently Increase a Room's Rarity", "difficulty": 2},
 {"name": "Re-roll a Draft 4+ Times", "difficulty": 2},
 {"name": "Open a Delivered Package", "difficulty": 2},
@@ -25,13 +26,14 @@ var objectiveData = [
 {"name": "Draft 2+ Copies of Room in a Day", "difficulty": 2},
 {"name": "Draft an Architect's House", "difficulty": 2},
 {"name": "Draft West and East Wing Halls", "difficulty": 2},
+{"name": "Change a Room's Color", "difficulty": 2},
+{"name": "Open Tomb Door to Reservoir", "difficulty": 2},
 
 // ungrouped hard
 {"name": "Collect Items Spread to Conference Room", "difficulty": 3},
 {"name": "Read a Library Book Aloud", "difficulty": 3},
 {"name": "Buy a Special Key", "difficulty": 3},
 {"name": "End a Day with 90+ Steps Left", "difficulty": 3},
-{"name": "Open Tomb Door to Reservoir", "difficulty": 3},
 {"name": "Open All Doors in Great Hall", "difficulty": 3},
 {"name": "Retrieve a Coin from Draining Water", "difficulty": 3},
 {"name": "Gain >20 Steps in Dining Room", "difficulty": 3},
