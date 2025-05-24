@@ -8,14 +8,13 @@ var objectiveData = [
 {"name": "Solve Darts with No Mistakes", "difficulty": 1},
 {"name": "Watch an Entire Alzara Cutscene", "difficulty": 1},
 {"name": "Draft a Donut", "difficulty": 1},
-{"name": "Draft Planetarium", "difficulty": 1},
 {"name": "Dig Up Nothing", "difficulty": 1},
 {"name": "Read The Red Prince", "difficulty": 1},
 {"name": "Draft Both Exits from Dark Room", "difficulty": 1},
 {"name": "End in a Room with a Live Animal", "difficulty": 1},
 
 // ungrouped medium
-{"name": "Gain Effect from Ending Day in a Room", "difficulty": 2},
+{"name": "End in the Planetarium", "difficulty": 2},
 {"name": "Spend 3 Gems Drafting a Room", "difficulty": 2},
 {"name": "Open 2 Trunks in a Day", "difficulty": 2},
 {"name": "Open the Car Trunk", "difficulty": 2},
@@ -25,7 +24,6 @@ var objectiveData = [
 {"name": "Have 10+ Gems", "difficulty": 2},
 {"name": "Have 6+ Keys, Gems and Coins Each", "difficulty": 2},
 {"name": "Re-roll a Draft 4+ Times", "difficulty": 2},
-{"name": "Solve 4 Billiard Rooms", "difficulty": 2},
 {"name": "Light 4 Blue Flames", "difficulty": 2},
 {"name": "Use an Elevator", "difficulty": 2},
 {"name": "Buy Out the Kitchen", "difficulty": 2},
@@ -94,6 +92,9 @@ var objectiveData = [
 {"name": "Solve 3 Parlors", "difficulty": 2, "group": "parlor"},
 {"name": "Solve 4 Parlors", "difficulty": 2, "group": "parlor"},
 {"name": "Solve 5 Parlors", "difficulty": 2, "group": "parlor"},
+
+{"name": "Solve 3 Billiard Rooms", "difficulty": 2, "group": "billiard"},
+{"name": "Solve 4 Billiard Rooms", "difficulty": 2, "group": "billiard"},
 
 {"name": "Trigger an Experiment", "difficulty": 2, "group": "experiment"},
 {"name": "Trigger an Experiment 2+ Times", "difficulty": 3, "group": "experiment"},
