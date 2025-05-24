@@ -242,19 +242,35 @@
         }
 
         function dumpJsonWeighted(){
-            var easy = objectiveData.filter(e => e.difficulty == 1).map(x => x.name);
-            var med = objectiveData.filter(e => e.difficulty == 2).map(x => x.name);
-            var hard = objectiveData.filter(e => e.difficulty == 3).map(x => x.name);
-            var vhard = objectiveData.filter(e => e.difficulty == 4).map(x => x.name);
+            usedGroups = [];
 
-            easy = shuffle(easy).slice(0, 5);
-            med = shuffle(med).slice(0, 9);
-            hard = shuffle(hard).slice(0, 8);
-            vhard = shuffle(vhard).slice(0, 3);
+            var easy = objectiveData.filter(e => e.difficulty == 1);
+            var med = objectiveData.filter(e => e.difficulty == 2);
+            var hard = objectiveData.filter(e => e.difficulty == 3);
+            var vhard = objectiveData.filter(e => e.difficulty == 4);
 
-            var allCards = easy.concat(med, hard, vhard);
-            allCards = shuffle(allCards);
-            var cardJson = makeBingoSyncCard(allCards);
+            var balancedCard = [];
+
+            var easySquares = 5;
+            var medSquares = 9;
+            var hardSquares = 8;
+            var vhardSquares = 3;
+
+            for (let a = 0; a < easySquares; a++) {
+                balancedCard.push(drawCard(easy));
+            }
+            for (let b = 0; b < medSquares; b++) {
+                balancedCard.push(drawCard(med));
+            }
+            for (let c = 0; c < hardSquares; c++) {
+                balancedCard.push(drawCard(hard));
+            }
+            for (let d = 0; d < vhardSquares; d++) {
+                balancedCard.push(drawCard(vhard));
+            }
+
+            balancedCard = shuffle(balancedCard);
+            var cardJson = makeBingoSyncCard(balancedCard);
 
             $("#jsondump").val(cardJson);
         }
