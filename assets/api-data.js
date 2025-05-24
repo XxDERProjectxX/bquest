@@ -1,17 +1,16 @@
 var objectiveData = [
 // chopping block
-{"name": "Draft West and East Wing Halls", "difficulty": 3},
+{"name": "Draft West and East Wing Halls", "difficulty": 2},
 
 // ungrouped easy
 {"name": "Toss a Coin in the Fountain", "difficulty": 1},
 {"name": "Spend 30 Seconds in the Lavatory", "difficulty": 1},
-{"name": "Solve Darts with No Mistakes", "difficulty": 1},
 {"name": "Watch an Entire Alzara Cutscene", "difficulty": 1},
 {"name": "Draft a Donut", "difficulty": 1},
 {"name": "Dig Up Nothing", "difficulty": 1},
 {"name": "Read The Red Prince", "difficulty": 1},
 {"name": "Draft Both Exits from Dark Room", "difficulty": 1},
-{"name": "End in a Room with a Live Animal", "difficulty": 1},
+{"name": "End with a Live Animal", "difficulty": 1},
 
 // ungrouped medium
 {"name": "End in the Planetarium", "difficulty": 2},
@@ -29,10 +28,6 @@ var objectiveData = [
 {"name": "Buy Out the Kitchen", "difficulty": 2},
 {"name": "Open a Delivered Package", "difficulty": 2},
 {"name": "Reach Rank 9", "difficulty": 2},
-{"name": "Open 4 Security Doors in a Day", "difficulty": 2},
-{"name": "Become Cursed", "difficulty": 2},
-{"name": "Rotate a Room", "difficulty": 2},
-{"name": "Get Gem from the Shelter Safe", "difficulty": 2},
 {"name": "Shelter the Lavatory", "difficulty": 2},
 {"name": "Eat in 3 Different Rooms in a Day", "difficulty": 2},
 {"name": "Eat Salted Food", "difficulty": 2},
@@ -55,8 +50,6 @@ var objectiveData = [
 {"name": "Open All Doors in Great Hall", "difficulty": 3},
 {"name": "Retrieve a Coin from Draining Water", "difficulty": 3},
 {"name": "Gain >20 Steps in Dining Room", "difficulty": 3},
-{"name": "Pick 3 Berries", "difficulty": 3},
-{"name": "Draft a Non-Outer Room in the Outer Room", "difficulty": 3},
 {"name": "Draft the Cloister for Free", "difficulty": 3},
 {"name": "View Stamp(s) in the Library", "difficulty": 3},
 {"name": "Buy Out the Commissary", "difficulty": 3},
@@ -93,13 +86,15 @@ var objectiveData = [
 {"name": "Solve 4 Parlors", "difficulty": 2, "group": "parlor"},
 {"name": "Solve 5 Parlors", "difficulty": 2, "group": "parlor"},
 
-{"name": "Solve 3 Billiard Rooms", "difficulty": 2, "group": "billiard"},
-{"name": "Solve 4 Billiard Rooms", "difficulty": 2, "group": "billiard"},
+{"name": "Solve Darts with No Mistakes", "difficulty": 1, "group": "billiard"},
+{"name": "Solve 2 Darts", "difficulty": 1, "group": "billiard"},
+{"name": "Solve 3 Darts", "difficulty": 2, "group": "billiard"},
+{"name": "Solve 4 Darts", "difficulty": 2, "group": "billiard"},
 
-{"name": "Trigger an Experiment", "difficulty": 2, "group": "experiment"},
-{"name": "Trigger an Experiment 2+ Times", "difficulty": 3, "group": "experiment"},
-{"name": "Trigger an Experiment 3+ Times", "difficulty": 3, "group": "experiment"},
-{"name": "Trigger an Experiment 4+ Times", "difficulty": 3, "group": "experiment"},
+{"name": "Trigger Experiment", "difficulty": 2, "group": "experiment"},
+{"name": "Trigger Experiment 2+ Times", "difficulty": 3, "group": "experiment"},
+{"name": "Trigger Experiment 3+ Times", "difficulty": 3, "group": "experiment"},
+{"name": "Trigger Experiment 4+ Times", "difficulty": 3, "group": "experiment"},
 
 {"name": "7+ Inventory Items", "difficulty": 2, "group": "inventory"},
 {"name": "8+ Inventory Items", "difficulty": 2, "group": "inventory"},
@@ -113,8 +108,15 @@ var objectiveData = [
 {"name": "Use 3 Upgrade Disks", "difficulty": 3, "group": "disks"},
 {"name": "Use 4 Upgrade Disks", "difficulty": 4, "group": "disks"},
 
+{"name": "2 Safe Gems in a Day", "difficulty": 2, "group": "safes"},
 {"name": "3 Safe Gems in a Day", "difficulty": 3, "group": "safes"},
 {"name": "4 Safe Gems in a Day", "difficulty": 3, "group": "safes"},
+{"name": "Get Gem from the Shelter Safe", "difficulty": 2, "group": "safes"},
+
+{"name": "Open 2 Security Doors in a Day", "difficulty": 1, "group": "security"},
+{"name": "Open 3 Security Doors in a Day", "difficulty": 2, "group": "security"},
+{"name": "Open 4 Security Doors in a Day", "difficulty": 2, "group": "security"},
+{"name": "Open 5 Security Doors in a Day", "difficulty": 3, "group": "security"},
 
 {"name": "Draft 3 Archived Floorplans in a Day", "difficulty": 2, "group": "archived"},
 {"name": "Draft 4 Archived Floorplans in a Day", "difficulty": 2, "group": "archived"},
@@ -151,6 +153,12 @@ var objectiveData = [
 {"name": "Attend Grade 4", "difficulty": 3, "group": "classroom"},
 {"name": "Attend Grade 5", "difficulty": 3, "group": "classroom"},
 {"name": "Attend Grade 6", "difficulty": 4, "group": "classroom"},
+
+{"name": "Become Cursed", "difficulty": 2, "group": "shrine"},
+{"name": "Rotate a Room", "difficulty": 2, "group": "shrine"},
+
+{"name": "Non-Outer Room Outside", "difficulty": 3, "group": "shrine_outer"},
+{"name": "Pick 3 Berries", "difficulty": 3, "group": "shrine_outer"},
 
 {"name": "Pull 1 Antechamber Lever", "difficulty": 2, "group": "levers"},
 {"name": "Pull 2 Unique Levers", "difficulty": 3, "group": "levers"},
