@@ -67,7 +67,6 @@ var objectiveData = [
 //grouped squares (only one of each group can appear)
 {"name": "End a Day with 100+ Steps Taken", "difficulty": 2, "group": "steps"},
 {"name": "End a Day with 120+ Steps Taken", "difficulty": 3, "group": "steps"},
-{"name": "End a Day with 140+ Steps Taken", "difficulty": 3, "group": "steps"},
 
 {"name": "3+ Allowance", "difficulty": 2, "group": "allowance"},
 {"name": "4+ Allowance", "difficulty": 2, "group": "allowance"},
@@ -85,17 +84,15 @@ var objectiveData = [
 {"name": "Solve 2 Parlors", "difficulty": 1, "group": "parlor"},
 {"name": "Solve 3 Parlors", "difficulty": 2, "group": "parlor"},
 {"name": "Solve 4 Parlors", "difficulty": 2, "group": "parlor"},
-{"name": "Solve 5 Parlors", "difficulty": 2, "group": "parlor"},
 
-{"name": "Solve Darts with No Mistakes", "difficulty": 1, "group": "billiard"},
-{"name": "Solve 2 Darts", "difficulty": 1, "group": "billiard"},
-{"name": "Solve 3 Darts", "difficulty": 2, "group": "billiard"},
-{"name": "Solve 4 Darts", "difficulty": 2, "group": "billiard"},
+{"name": "Solve 2 Dartboards", "difficulty": 1, "group": "billiard"},
+{"name": "Solve 3 Dartboards", "difficulty": 2, "group": "billiard"},
+{"name": "Solve 4 Dartboards", "difficulty": 2, "group": "billiard"},
 
 {"name": "Trigger Experiment", "difficulty": 2, "group": "experiment"},
-{"name": "Trigger Experiment 2+ Times", "difficulty": 3, "group": "experiment"},
-{"name": "Trigger Experiment 3+ Times", "difficulty": 3, "group": "experiment"},
-{"name": "Trigger Experiment 4+ Times", "difficulty": 3, "group": "experiment"},
+{"name": "Trigger Experiment 2x", "difficulty": 3, "group": "experiment"},
+{"name": "Trigger Experiment 3x", "difficulty": 3, "group": "experiment"},
+{"name": "Trigger Experiment 4x", "difficulty": 3, "group": "experiment"},
 
 {"name": "7+ Inventory Items", "difficulty": 2, "group": "inventory"},
 {"name": "8+ Inventory Items", "difficulty": 2, "group": "inventory"},
@@ -112,7 +109,6 @@ var objectiveData = [
 {"name": "2 Safe Gems in a Day", "difficulty": 2, "group": "safes"},
 {"name": "3 Safe Gems in a Day", "difficulty": 3, "group": "safes"},
 {"name": "4 Safe Gems in a Day", "difficulty": 3, "group": "safes"},
-{"name": "Get Gem from the Shelter Safe", "difficulty": 2, "group": "safes"},
 
 {"name": "Open 2 Security Doors in a Day", "difficulty": 1, "group": "security"},
 {"name": "Open 3 Security Doors in a Day", "difficulty": 2, "group": "security"},
