@@ -71,9 +71,8 @@ var objectiveData = [
 {"name": "3+ Dice", "difficulty": 2, "group": "dice"},
 {"name": "4+ Dice", "difficulty": 3, "group": "dice"},
 
-{"name": "6+ Keys, Gems, Coins Each", "difficulty": 2},
-{"name": "8+ Keys, Gems, Coins Each", "difficulty": 2},
-{"name": "10+ Keys, Gems, Coins Each", "difficulty": 3},
+{"name": "6+ Keys, Gems, Coins Each", "difficulty": 2, "group": "basics"},
+{"name": "8+ Keys, Gems, Coins Each", "difficulty": 3, "group": "basics"},
 
 {"name": "3+ Allowance", "difficulty": 2, "group": "allowance"},
 {"name": "4+ Allowance", "difficulty": 2, "group": "allowance"},
@@ -82,12 +81,10 @@ var objectiveData = [
 {"name": "7+ Allowance", "difficulty": 4, "group": "allowance"},
 
 {"name": "5+ Stars", "difficulty": 2, "group": "stars"},
-{"name": "8+ Stars", "difficulty": 3, "group": "stars"},
-{"name": "11+ Stars", "difficulty": 3, "group": "stars"},
+{"name": "10+ Stars", "difficulty": 3, "group": "stars"},
 {"name": "15+ Stars", "difficulty": 4, "group": "stars"},
 
 {"name": "Fail 1 Parlor", "difficulty": 1, "group": "parlor"},
-{"name": "Fail 2 Parlors", "difficulty": 1, "group": "parlor"},
 {"name": "Solve 2 Parlors", "difficulty": 1, "group": "parlor"},
 {"name": "Solve 3 Parlors", "difficulty": 2, "group": "parlor"},
 {"name": "Solve 4 Parlors", "difficulty": 2, "group": "parlor"},
@@ -95,6 +92,7 @@ var objectiveData = [
 {"name": "Solve 2 Dartboards", "difficulty": 1, "group": "billiard"},
 {"name": "Solve 3 Dartboards", "difficulty": 2, "group": "billiard"},
 {"name": "Solve 4 Dartboards", "difficulty": 2, "group": "billiard"},
+{"name": "Solve 5 Dartboards", "difficulty": 3, "group": "billiard"},
 
 {"name": "Trigger Experiment", "difficulty": 2, "group": "experiment"},
 {"name": "Trigger Experiment 2x", "difficulty": 2, "group": "experiment"},
@@ -173,7 +171,7 @@ var objectiveData = [
 {"name": "Use an Elevator", "difficulty": 2, "group": "flames"},
 {"name": "Light 4 Blue Flames", "difficulty": 2, "group": "flames"},
 
-{"name": "Pull 1 Antechamber Lever", "difficulty": 2, "group": "levers"},
+{"name": "Pull Antechamber Lever", "difficulty": 2, "group": "levers"},
 {"name": "Pull 2 Unique Levers", "difficulty": 3, "group": "levers"},
 {"name": "Pull 3 Unique Levers", "difficulty": 4, "group": "levers"}
 ];
