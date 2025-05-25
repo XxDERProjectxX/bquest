@@ -131,7 +131,6 @@ var objectiveData = [
 
 {"name": "End with 8+ Dead Ends", "difficulty": 2, "group": "dead_ends"},
 {"name": "End with 10+ Dead Ends", "difficulty": 3, "group": "dead_ends"},
-{"name": "End with 12+ Dead Ends", "difficulty": 3, "group": "dead_ends"},
 
 {"name": "Draft 6 Red Rooms in a Day", "difficulty": 3, "group": "rooms"},
 {"name": "Draft 7 Bedrooms in a Day", "difficulty": 3, "group": "rooms"},
