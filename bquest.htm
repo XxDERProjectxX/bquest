@@ -147,6 +147,7 @@
                     counter.addClass("marked");
                     var currentCount = parseInt(counter.html(), 10) + 1;
                     counter.html(currentCount);
+                    e.preventDefault();
                 }
             });
         });
