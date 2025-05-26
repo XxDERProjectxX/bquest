@@ -128,14 +128,25 @@
             $("#board td").on("mousedown", function(e){
                 document.oncontextmenu = function() { return false; }
 
-                if(e.which == 1){
+                if(e.which == 1){ //left-click
                     var color = $('input[name="colorOption"]:checked').val();
-                    $(this).attr("class") == color
-                        ? $(this).removeClass()
-                        : $(this).removeClass().addClass(color);
+                    if($(this).attr("class") == color){
+                        $(this).removeClass();
+                        var counter = $(this).children(".counter").first();
+                        counter.removeClass("marked");
+                        counter.html("0");
+                    } else {
+                        $(this).removeClass().addClass(color);
+                    }
                 }
-                if(e.which == 3){
+                if(e.which == 3){ // right-click
                     $(this).children(".marker").toggleClass("marked");
+                }
+                if(e.which == 2){ // middle-click
+                    var counter = $(this).children(".counter").first();
+                    counter.addClass("marked");
+                    var currentCount = parseInt(counter.html(), 10) + 1;
+                    counter.html(currentCount);
                 }
             });
         });
@@ -153,6 +164,7 @@
                 var cell = $("#board").find("td").eq(i);
                 cell.html(boardJson[i].name);
                 cell.append("<div class=\"marker\"></div>");
+                cell.append("<div class=\"counter badge bg-dark text-white\">0</div>");
             }
         }        
     </script>
