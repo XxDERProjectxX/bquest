@@ -161,8 +161,8 @@ var objectiveData = [
 {"name": "Become Cursed", "difficulty": 2, "group": "shrine"},
 {"name": "Rotate a Room", "difficulty": 2, "group": "shrine"},
 
-{"name": "Dig 10x in a Day", "difficulty": 2},
-{"name": "Dig 15x in a Day", "difficulty": 3},
+{"name": "Dig 10x in a Day", "difficulty": 2, "group": "dig"},
+{"name": "Dig 15x in a Day", "difficulty": 3, "group": "dig"},
 
 {"name": "Non-Outer Room Outside", "difficulty": 3, "group": "shrine_outer"},
 {"name": "Pick 3 Berries", "difficulty": 3, "group": "shrine_outer"},
