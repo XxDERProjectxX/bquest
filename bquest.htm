@@ -125,12 +125,18 @@
     <script src="assets/functions.js"></script>
     <script>
         $(function(){
-            $("#board td").click(function(){
-                var color = $('input[name="colorOption"]:checked').val();
-                $(this).attr("class") == color
-                    ? $(this).removeClass()
-                    : $(this).removeClass().addClass(color);
+            $("#board td").on("mousedown", function(e){
+                document.oncontextmenu = function() { return false; }
 
+                if(e.which == 1){
+                    var color = $('input[name="colorOption"]:checked').val();
+                    $(this).attr("class") == color
+                        ? $(this).removeClass()
+                        : $(this).removeClass().addClass(color);
+                }
+                if(e.which == 3){
+                    $(this).children(".marker").toggleClass("marked");
+                }
             });
         });
         
@@ -144,7 +150,9 @@
             var boardJson = JSON.parse(boardData);
             
             for (let i = 0; i < boardJson.length; i++) {
-                $("#board").find("td").eq(i).html(boardJson[i].name);
+                var cell = $("#board").find("td").eq(i);
+                cell.html(boardJson[i].name);
+                cell.append("<div class=\"marker\"></div>");
             }
         }        
     </script>
