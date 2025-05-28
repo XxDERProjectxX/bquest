@@ -20,7 +20,7 @@ var objectiveData = [
 {"name": "Open a Delivered Package", "difficulty": 2},
 {"name": "Reach Rank 9", "difficulty": 2},
 {"name": "Shelter the Lavatory", "difficulty": 2},
-{"name": "Eat in Pantry, Kitchen, and Dining Rooms in a Day", "difficulty": 2},
+{"name": "Eat in Pantry, Kitchen, and Dining in a Day", "difficulty": 2},
 {"name": "Eat Salted Food", "difficulty": 2},
 {"name": "Draft 8 Blue Rooms in a Row", "difficulty": 2},
 {"name": "Draft 2+ Copies of Room in a Day", "difficulty": 2},
@@ -94,9 +94,7 @@ var objectiveData = [
 {"name": "Solve 4 Dartboards", "difficulty": 2, "group": "billiard"},
 {"name": "Solve 5 Dartboards", "difficulty": 3, "group": "billiard"},
 
-{"name": "Trigger Experiment", "difficulty": 2, "group": "experiment"},
 {"name": "Trigger Experiment 2x", "difficulty": 2, "group": "experiment"},
-{"name": "Trigger Experiment 3x", "difficulty": 3, "group": "experiment"},
 {"name": "Trigger Experiment 4x", "difficulty": 3, "group": "experiment"},
 
 {"name": "8+ Inventory Items", "difficulty": 2, "group": "inventory"},
@@ -107,7 +105,8 @@ var objectiveData = [
 {"name": "Use 1 Upgrade Disk", "difficulty": 1, "group": "disks"},
 {"name": "Use 2 Upgrade Disks", "difficulty": 2, "group": "disks"},
 {"name": "Use 3 Upgrade Disks", "difficulty": 3, "group": "disks"},
-{"name": "Use 4 Upgrade Disks", "difficulty": 4, "group": "disks"},
+{"name": "Use 4 Upgrade Disks", "difficulty": 3, "group": "disks"},
+{"name": "Use 5 Upgrade Disks", "difficulty": 4, "group": "disks"},
 
 {"name": "2 Safes in a Day", "difficulty": 2, "group": "safes"},
 {"name": "3 Safes in a Day", "difficulty": 2, "group": "safes"},
@@ -140,8 +139,11 @@ var objectiveData = [
 {"name": "End in Rank 1 Pancake House", "difficulty": 1, "group": "pancake"},
 {"name": "End in Rank 2 Pancake House", "difficulty": 1, "group": "pancake"},
 {"name": "End in Rank 3 Pancake House", "difficulty": 2, "group": "pancake"},
-{"name": "End in Rank 4 Pancake House", "difficulty": 3, "group": "pancake"},
+{"name": "End in Rank 4 Pancake House", "difficulty": 2, "group": "pancake"},
 {"name": "End in Rank 5 Pancake House", "difficulty": 3, "group": "pancake"},
+
+{"name": "End with 35+ Rooms", "difficulty": 2, "group": "total_rooms"},
+{"name": "End with 40+ Rooms", "difficulty": 3, "group": "total_rooms"},
 
 {"name": "1 Full Directory Category", "difficulty": 2, "group": "full_dir"},
 {"name": "Full Directory of Red Rooms", "difficulty": 3, "group": "full_dir"},
