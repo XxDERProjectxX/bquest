@@ -38,7 +38,6 @@ var objectiveData = [
 {"name": "Retrieve a Coin from Draining Water", "difficulty": 3},
 {"name": "Gain >20 Steps in Dining Room", "difficulty": 3},
 {"name": "Draft the Cloister for Free", "difficulty": 3},
-{"name": "View Stamp(s) in the Library", "difficulty": 3},
 {"name": "Collect a Flower Gem", "difficulty": 3},
 {"name": "Draft Locker, Sauna, Pump Rooms in a Day", "difficulty": 3},
 {"name": "Cash a Payroll Check", "difficulty": 3},
@@ -52,8 +51,8 @@ var objectiveData = [
 {"name": "Gain Chess Power", "difficulty": 4},
 
 //grouped squares (only one of each group can appear)
-{"name": "End with 100+ Steps Taken", "difficulty": 2, "group": "steps"},
-{"name": "End with 120+ Steps Taken", "difficulty": 3, "group": "steps"},
+{"name": "End with 100+ Steps Taken", "difficulty": 1, "group": "steps"},
+{"name": "End with 120+ Steps Taken", "difficulty": 2, "group": "steps"},
 
 {"name": "Buy Out Any Shop", "difficulty": 2, "group": "buyout"},
 {"name": "Buy Out Kitchen", "difficulty": 2, "group": "buyout"},
@@ -102,7 +101,6 @@ var objectiveData = [
 {"name": "12+ Inventory Items", "difficulty": 3, "group": "inventory"},
 {"name": "14+ Inventory Items", "difficulty": 3, "group": "inventory"},
 
-{"name": "Use 1 Upgrade Disk", "difficulty": 1, "group": "disks"},
 {"name": "Use 2 Upgrade Disks", "difficulty": 2, "group": "disks"},
 {"name": "Use 3 Upgrade Disks", "difficulty": 3, "group": "disks"},
 {"name": "Use 4 Upgrade Disks", "difficulty": 3, "group": "disks"},
@@ -128,8 +126,9 @@ var objectiveData = [
 {"name": "Open 3 Lockers in a Day", "difficulty": 2, "group": "lockers"},
 {"name": "Open 6 Lockers in a Day", "difficulty": 3, "group": "lockers"},
 
-{"name": "End with 8+ Dead Ends", "difficulty": 2, "group": "dead_ends"},
-{"name": "End with 10+ Dead Ends", "difficulty": 3, "group": "dead_ends"},
+{"name": "End with 8+ Dead Ends", "difficulty": 1, "group": "dead_ends"},
+{"name": "End with 10+ Dead Ends", "difficulty": 2, "group": "dead_ends"},
+{"name": "End with 12+ Dead Ends", "difficulty": 3, "group": "dead_ends"},
 
 {"name": "Draft 6 Red Rooms in a Day", "difficulty": 3, "group": "rooms"},
 {"name": "Draft 7 Bedrooms in a Day", "difficulty": 3, "group": "rooms"},
@@ -142,8 +141,8 @@ var objectiveData = [
 {"name": "End in Rank 4 Pancake House", "difficulty": 2, "group": "pancake"},
 {"name": "End in Rank 5 Pancake House", "difficulty": 3, "group": "pancake"},
 
-{"name": "End with 35+ Rooms", "difficulty": 2, "group": "total_rooms"},
-{"name": "End with 40+ Rooms", "difficulty": 3, "group": "total_rooms"},
+{"name": "End with 35+ Rooms", "difficulty": 3, "group": "total_rooms"},
+{"name": "End with 40+ Rooms", "difficulty": 4, "group": "total_rooms"},
 
 {"name": "1 Full Directory Category", "difficulty": 2, "group": "full_dir"},
 {"name": "Full Directory of Red Rooms", "difficulty": 3, "group": "full_dir"},
@@ -154,17 +153,18 @@ var objectiveData = [
 {"name": "Add 3 New Floorplans", "difficulty": 3, "group": "new_plan"},
 {"name": "Add 4 New Floorplans", "difficulty": 4, "group": "new_plan"},
 
-{"name": "Attend Grade 2", "difficulty": 2, "group": "classroom"},
 {"name": "Attend Grade 3", "difficulty": 2, "group": "classroom"},
 {"name": "Attend Grade 4", "difficulty": 3, "group": "classroom"},
-{"name": "Attend Grade 5", "difficulty": 3, "group": "classroom"},
-{"name": "Attend Grade 6", "difficulty": 4, "group": "classroom"},
+{"name": "Attend Grade 5", "difficulty": 4, "group": "classroom"},
 
 {"name": "Become Cursed", "difficulty": 2, "group": "shrine"},
 {"name": "Rotate a Room", "difficulty": 2, "group": "shrine"},
 
 {"name": "Dig 10x in a Day", "difficulty": 2, "group": "dig"},
 {"name": "Dig 15x in a Day", "difficulty": 3, "group": "dig"},
+
+{"name": "View Fine Print", "difficulty": 2, "group": "magnifying_glass"},
+{"name": "View Stamp(s) in the Library", "difficulty": 3, "group": "magnifying_glass"},
 
 {"name": "Non-Outer Room Outside", "difficulty": 3, "group": "shrine_outer"},
 {"name": "Pick 3 Berries", "difficulty": 3, "group": "shrine_outer"},
