@@ -21,7 +21,6 @@ var objectiveData = [
 {"name": "Reach Rank 9", "difficulty": 2},
 {"name": "Shelter the Lavatory", "difficulty": 2},
 {"name": "Eat in Pantry, Kitchen, and Dining in a Day", "difficulty": 2},
-{"name": "Eat Salted Food", "difficulty": 2},
 {"name": "Draft 8 Blue Rooms in a Row", "difficulty": 2},
 {"name": "Draft 2+ Copies of Room in a Day", "difficulty": 2},
 {"name": "Draft an Architect's House", "difficulty": 2},
@@ -36,13 +35,13 @@ var objectiveData = [
 {"name": "End a Day with 90+ Steps Left", "difficulty": 3},
 {"name": "Open All Doors in Great Hall", "difficulty": 3},
 {"name": "Retrieve a Coin from Draining Water", "difficulty": 3},
-{"name": "Gain >20 Steps in Dining Room", "difficulty": 3},
 {"name": "Draft the Cloister for Free", "difficulty": 3},
 {"name": "Collect a Flower Gem", "difficulty": 3},
 {"name": "Draft Locker, Sauna, Pump Rooms in a Day", "difficulty": 3},
 {"name": "Cash a Payroll Check", "difficulty": 3},
 {"name": "Access Controls on the Back of a Room", "difficulty": 3},
 {"name": "Make a Contraption", "difficulty": 3},
+{"name": "End with 35+ Rooms", "difficulty": 3},
 
 // ungrouped very hard
 {"name": "Draft All 8 Outer Rooms", "difficulty": 4},
@@ -72,6 +71,9 @@ var objectiveData = [
 
 {"name": "6+ Keys, Gems, Coins Each", "difficulty": 2, "group": "basics"},
 {"name": "8+ Keys, Gems, Coins Each", "difficulty": 3, "group": "basics"},
+
+{"name": "Eat Salted Food", "difficulty": 2, "group": "food"},
+{"name": "Gain >20 Steps in Dining Room", "difficulty": 2, "group": "food"},
 
 {"name": "3+ Allowance", "difficulty": 2, "group": "allowance"},
 {"name": "4+ Allowance", "difficulty": 2, "group": "allowance"},
@@ -114,9 +116,7 @@ var objectiveData = [
 {"name": "Open the Car Trunk", "difficulty": 2, "group": "trunks"},
 
 {"name": "Open 2 Security Doors in a Day", "difficulty": 1, "group": "security"},
-{"name": "Open 3 Security Doors in a Day", "difficulty": 2, "group": "security"},
 {"name": "Open 4 Security Doors in a Day", "difficulty": 2, "group": "security"},
-{"name": "Open 5 Security Doors in a Day", "difficulty": 3, "group": "security"},
 
 {"name": "Draft 3 Archived Floorplans in a Day", "difficulty": 2, "group": "archived"},
 {"name": "Draft 4 Archived Floorplans in a Day", "difficulty": 2, "group": "archived"},
@@ -140,9 +140,6 @@ var objectiveData = [
 {"name": "End in Rank 3 Pancake House", "difficulty": 2, "group": "pancake"},
 {"name": "End in Rank 4 Pancake House", "difficulty": 2, "group": "pancake"},
 {"name": "End in Rank 5 Pancake House", "difficulty": 3, "group": "pancake"},
-
-{"name": "End with 35+ Rooms", "difficulty": 3, "group": "total_rooms"},
-{"name": "End with 40+ Rooms", "difficulty": 4, "group": "total_rooms"},
 
 {"name": "1 Full Directory Category", "difficulty": 2, "group": "full_dir"},
 {"name": "Full Directory of Red Rooms", "difficulty": 3, "group": "full_dir"},
