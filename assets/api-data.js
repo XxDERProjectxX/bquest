@@ -108,7 +108,7 @@ var objectiveData = [
 {"name": "Use 4 Upgrade Disks", "difficulty": 3, "group": "disks"},
 {"name": "Use 5 Upgrade Disks", "difficulty": 4, "group": "disks"},
 
-{"name": "2 Safes in a Day", "difficulty": 2, "group": "safes"},
+{"name": "2 Safes in a Day", "difficulty": 1, "group": "safes"},
 {"name": "3 Safes in a Day", "difficulty": 2, "group": "safes"},
 {"name": "4 Safes in a Day", "difficulty": 3, "group": "safes"},
 
