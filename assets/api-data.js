@@ -37,9 +37,7 @@ var objectiveData = [
 {"name": "Retrieve a Coin from Draining Water", "difficulty": 3},
 {"name": "Draft the Cloister for Free", "difficulty": 3},
 {"name": "Collect a Flower Gem", "difficulty": 3},
-{"name": "Draft Locker, Sauna, Pump Rooms in a Day", "difficulty": 3},
 {"name": "Cash a Payroll Check", "difficulty": 3},
-{"name": "Access Controls on the Back of a Room", "difficulty": 3},
 {"name": "Make a Contraption", "difficulty": 3},
 {"name": "End with 35+ Rooms", "difficulty": 3},
 
@@ -125,6 +123,7 @@ var objectiveData = [
 
 {"name": "Open 3 Lockers in a Day", "difficulty": 2, "group": "lockers"},
 {"name": "Open 6 Lockers in a Day", "difficulty": 3, "group": "lockers"},
+{"name": "Draft Locker, Sauna, Pump Rooms in a Day", "difficulty": 3, "group": "lockers"},
 
 {"name": "End with 8+ Dead Ends", "difficulty": 1, "group": "dead_ends"},
 {"name": "End with 10+ Dead Ends", "difficulty": 2, "group": "dead_ends"},
