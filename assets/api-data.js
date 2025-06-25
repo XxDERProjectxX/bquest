@@ -122,7 +122,7 @@ var objectiveData = [
 {"name": "Draft 6 Archived Floorplans in a Day", "difficulty": 3, "group": "archived"},
 
 {"name": "Open 3 Lockers in a Day", "difficulty": 2, "group": "lockers"},
-{"name": "Open 6 Lockers in a Day", "difficulty": 3, "group": "lockers"},
+{"name": "Open 5 Lockers in a Day", "difficulty": 3, "group": "lockers"},
 {"name": "Draft Locker, Sauna, Pump Rooms in a Day", "difficulty": 3, "group": "lockers"},
 
 {"name": "End with 8+ Dead Ends", "difficulty": 1, "group": "dead_ends"},
