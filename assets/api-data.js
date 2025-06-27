@@ -42,7 +42,6 @@ var objectiveData = [
 {"name": "End with 35+ Rooms", "difficulty": 3},
 
 // ungrouped very hard
-{"name": "Draft All 8 Outer Rooms", "difficulty": 4},
 {"name": "Add Mechanarium", "difficulty": 4},
 {"name": "Enter Antechamber", "difficulty": 4},
 {"name": "Gain Chess Power", "difficulty": 4},
@@ -90,8 +89,7 @@ var objectiveData = [
 
 {"name": "Solve 2 Dartboards", "difficulty": 1, "group": "billiard"},
 {"name": "Solve 3 Dartboards", "difficulty": 2, "group": "billiard"},
-{"name": "Solve 4 Dartboards", "difficulty": 2, "group": "billiard"},
-{"name": "Solve 5 Dartboards", "difficulty": 3, "group": "billiard"},
+{"name": "Solve 4 Dartboards", "difficulty": 3, "group": "billiard"},
 
 {"name": "Trigger Experiment 2x", "difficulty": 2, "group": "experiment"},
 {"name": "Trigger Experiment 4x", "difficulty": 3, "group": "experiment"},
@@ -99,7 +97,6 @@ var objectiveData = [
 {"name": "8+ Inventory Items", "difficulty": 2, "group": "inventory"},
 {"name": "10+ Inventory Items", "difficulty": 2, "group": "inventory"},
 {"name": "12+ Inventory Items", "difficulty": 3, "group": "inventory"},
-{"name": "14+ Inventory Items", "difficulty": 3, "group": "inventory"},
 
 {"name": "Use 2 Upgrade Disks", "difficulty": 2, "group": "disks"},
 {"name": "Use 3 Upgrade Disks", "difficulty": 3, "group": "disks"},
