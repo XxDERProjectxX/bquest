@@ -5,7 +5,7 @@ var objectiveData = [
 {"name": "Watch an Entire Alzara Cutscene", "difficulty": 1},
 {"name": "Draft a Donut", "difficulty": 1},
 {"name": "Dig Up Nothing", "difficulty": 1},
-{"name": "Read The Red Prince", "difficulty": 1},
+{"name": "Read The Red Prince Aloud", "difficulty": 1},
 {"name": "Draft Both Exits from Dark Room", "difficulty": 1},
 {"name": "End with a Live Animal", "difficulty": 1},
 {"name": "End in Planetarium", "difficulty": 1},
