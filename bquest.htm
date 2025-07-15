@@ -89,6 +89,7 @@
             <div class="text-center">
                 <input type="button" class="btn btn-primary mb-3 shadow" value="Generate Squares" onclick="generateJson()">
                 <input type="button" class="btn btn-success mb-3 shadow" value="Show Board" onclick="buildBoard()">
+                <input type="button" class="btn btn-danger mb-3 shadow" value="Clear Board" onclick="clearBoard()">
                 <input type="button" class="btn btn-warning mb-3 shadow" value="Download" onclick="downloadJson()">
             </div>
             <div class="row">
@@ -168,6 +169,26 @@
                 cell.append("<div class=\"counter badge bg-dark text-white\">0</div>");
             }
         }
+
+        function clearBoard(){
+            const BOARD_SIZE = 45;
+            const GOAL_SQUARE = 2;
+            const START_SQUARE = 42;
+		    for (let i = 0; i < BOARD_SIZE; i++) {
+                var cell = $("#board").find("td").eq(i);
+                
+				if(i==GOAL_SQUARE){
+				    cell.html("GOAL");
+                    cell.removeClass().addClass("bg-success");
+				}else if(i==START_SQUARE){
+				    cell.html("START");
+                    cell.removeClass().addClass("bg-primary");
+				}else{
+                    cell.html("");
+                    cell.removeClass();
+                }
+            }
+		}
         
         function downloadJson(){
             var boardJson = $("#boardFull").val();
