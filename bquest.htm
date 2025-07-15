@@ -89,6 +89,7 @@
             <div class="text-center">
                 <input type="button" class="btn btn-primary mb-3 shadow" value="Generate Squares" onclick="generateJson()">
                 <input type="button" class="btn btn-success mb-3 shadow" value="Show Board" onclick="buildBoard()">
+                <input type="button" class="btn btn-dark mb-3 shadow" value="Show Fogged Board" onclick="buildBoard()">
                 <input type="button" class="btn btn-danger mb-3 shadow" value="Clear Board" onclick="clearBoard()">
                 <input type="button" class="btn btn-warning mb-3 shadow" value="Download" onclick="downloadJson()">
             </div>
@@ -155,12 +156,12 @@
         
         function generateJson(){
             var output = generateCards("bquest");
-            $("#boardFull").val(output);
+            $("#boardFull").val(btoa(output));
         }
         
         function buildBoard(){
             var boardData = $("#boardFull").val();
-            var boardJson = JSON.parse(boardData);
+            var boardJson = JSON.parse(atob(boardData));
             
             for (let i = 0; i < boardJson.length; i++) {
                 var cell = $("#board").find("td").eq(i);
@@ -174,16 +175,15 @@
             const BOARD_SIZE = 45;
             const GOAL_SQUARE = 2;
             const START_SQUARE = 42;
-		    for (let i = 0; i < BOARD_SIZE; i++) {
+            for (let i = 0; i < BOARD_SIZE; i++) {
                 var cell = $("#board").find("td").eq(i);
-                
-				if(i==GOAL_SQUARE){
-				    cell.html("GOAL");
+                if(i==GOAL_SQUARE){
+                    cell.html("GOAL");
                     cell.removeClass().addClass("bg-success");
-				}else if(i==START_SQUARE){
-				    cell.html("START");
+                }else if(i==START_SQUARE){
+                    cell.html("START");
                     cell.removeClass().addClass("bg-primary");
-				}else{
+                }else{
                     cell.html("");
                     cell.removeClass();
                 }
@@ -191,7 +191,7 @@
 		}
         
         function downloadJson(){
-            var boardJson = $("#boardFull").val();
+            var boardJson = atob($("#boardFull").val());
             const a = document.createElement('a');
             a.href = URL.createObjectURL( new Blob([boardJson], { type:`text/json` }) );
             a.download = 'bquest-board-' + Date.now() + '.json';
