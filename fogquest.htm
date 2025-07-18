@@ -13,7 +13,6 @@
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to Main Content</a>
-    
     <div id="app-1" class="bg-primary bg-opacity-25 pt-4">
         <div class="container site-content">
             <div class="row g-5 mb-5">
@@ -87,9 +86,9 @@
             </div>
             
             <div class="text-center">
-                <input type="button" class="btn btn-primary mb-3 shadow" value="Generate Squares" onclick="generateJson()">
-                <input type="button" class="btn btn-success mb-3 shadow" value="Show Board" onclick="buildBoard()">
-                <input type="button" class="btn btn-warning mb-3 shadow" value="Download" onclick="downloadJson()">
+                <input type="button" class="btn btn-primary mb-3 shadow" value="Generate Fogged Squares" onclick="generateJson()">
+                <input type="button" class="btn btn-dark mb-3 shadow" value="Show Fogged Board" onclick="fogBoard()">
+                <input type="button" class="btn btn-danger mb-3 shadow" value="Clear Board" onclick="clearBoard()">
             </div>
             <div class="row">
                 <div class="col-lg-6 mx-auto mb-3">
@@ -100,12 +99,6 @@
                 <div class="btn-group shadow mx-auto" role="group">
                     <input type="radio" class="btn-check" name="colorOption" id="option1" value="bg-danger" checked>
                     <label class="btn btn-sm btn-danger" for="option1">Red</label>
-                    
-                    <input type="radio" class="btn-check" name="colorOption" id="option2" value="bg-primary">
-                    <label class="btn btn-sm btn-primary" for="option2">Blue</label>
-                    
-                    <input type="radio" class="btn-check" name="colorOption" id="option3" value="bg-success">
-                    <label class="btn btn-sm btn-success" for="option3">Green</label>
                 </div>
             </div>
         </div>
@@ -113,7 +106,8 @@
         <!-- footers -->
         <footer class="site-footer bg-primary bg-opacity-50 py-4">
             <div class="container">
-                Site by <a href="https://twitch.tv/radringtail">RadRingtail</a>
+                Site by <a href="https://twitch.tv/radringtail">RadRingtail</a> 
+				FOGGIFICATION BY <a href="https://twitch.tv/gelly">GELLY</a> 
             </div>
         </footer>
     </div>
@@ -124,9 +118,36 @@
     <script src="assets/api-data.js"></script>
     <script src="assets/functions.js"></script>
     <script>
+	    const BOARD_SIZE = 45;
+        const GOAL_SQUARE = 2;
+        const START_SQUARE = 42;
+		
         $(function(){
             $("#board td").on("mousedown", function(e){
                 document.oncontextmenu = function() { return false; }
+				
+				//we ignore any input on fogged squares
+				if($(this).attr("class") == "bg-secondary"){return;}
+				
+				//we need the index of the square
+				//ok so this is probably a sin but uh
+				//my excuse is i don't know javascript
+				//-gelly
+				var boardList = $("#board").find("td");
+				var sqNum = -1;
+				for(let i = 0; i < BOARD_SIZE; i++){
+				    if(e.currentTarget === boardList.eq(i)[0]){
+						sqNum = i;
+						break;
+					}
+				}
+				if(sqNum == -1){
+					console.log("it's a wucky");
+					return;
+				}
+				
+				//we also ignore any input on goal/start squares
+				if(sqNum==GOAL_SQUARE || sqNum==START_SQUARE){return;}
                 
                 if(e.which == 1){ //left-click
                     var color = $('input[name="colorOption"]:checked').val();
@@ -137,6 +158,24 @@
                         counter.html("0");
                     } else {
                         $(this).removeClass().addClass(color);
+						
+						//if we're adding color, it's time to reveal some squares!
+						//to the east
+						if(sqNum%5!=0){
+						    revealSquare(sqNum-1);
+						}
+						//to the west
+						if(sqNum%5!=4){
+						    revealSquare(sqNum+1);
+						}
+						//to the north!
+						if(sqNum>4){
+						    revealSquare(sqNum-5);
+						}
+						//to the south, even!
+						if(sqNum<40){
+						    revealSquare(sqNum+5);
+						}
                     }
                 }
                 if(e.which == 3){ // right-click
@@ -154,23 +193,72 @@
         
         function generateJson(){
             var output = generateCards("bquest");
-            $("#boardFull").val(output);
+            $("#boardFull").val(btoa(output));
         }
         
-        function buildBoard(){
+        function fogBoard(){
+		    const ENTR_NORTH = 37;
+			const ENTR_EAST = 41;
+			const ENTR_WEST = 43;
+			
             var boardData = $("#boardFull").val();
-            var boardJson = JSON.parse(boardData);
+            var boardJson = JSON.parse(atob(boardData));
             
             for (let i = 0; i < boardJson.length; i++) {
                 var cell = $("#board").find("td").eq(i);
-                cell.html(boardJson[i].name);
+                cell.html("");
                 cell.append("<div class=\"marker\"></div>");
                 cell.append("<div class=\"counter badge bg-dark text-white\">0</div>");
+				if(i!=GOAL_SQUARE && i!= START_SQUARE){
+				    cell.append("~~~~~");
+				    cell.append("<div class=\"" + boardJson[i].name + "\"></div>");
+				    cell.removeClass().addClass("bg-secondary");
+				}else{
+				    cell.append(boardJson[i].name);
+				}
             }
+			revealSquare(ENTR_NORTH);
+			revealSquare(ENTR_EAST);
+			revealSquare(ENTR_WEST);
         }
+		
+		function revealSquare(sqNum){
+		    var cell = $("#board").find("td").eq(sqNum);
+			
+			//if the square is not fogged, don't bother revealing it
+			if(!cell.html().includes("~~~~~")){return;}
+			
+			//the fog splits between the condition and the doohickeys
+			var tickers = cell.html().split("~~~~~")[0];
+			var condition = cell.html().split("~~~~~")[1];
+			
+			//readd doohickeys
+			cell.html(tickers);
+			
+			//slough off the div stuff for the condition
+			cell.append(condition.split("\"")[1])
+			//no longer fog ^^
+			cell.removeClass();
+		}
+
+        function clearBoard(){
+            for (let i = 0; i < BOARD_SIZE; i++) {
+                var cell = $("#board").find("td").eq(i);
+                if(i==GOAL_SQUARE){
+                    cell.html("GOAL");
+                    cell.removeClass().addClass("bg-success");
+                }else if(i==START_SQUARE){
+                    cell.html("START");
+                    cell.removeClass().addClass("bg-primary");
+                }else{
+                    cell.html("");
+                    cell.removeClass();
+                }
+            }
+		}
         
         function downloadJson(){
-            var boardJson = $("#boardFull").val();
+            var boardJson = atob($("#boardFull").val());
             const a = document.createElement('a');
             a.href = URL.createObjectURL( new Blob([boardJson], { type:`text/json` }) );
             a.download = 'bquest-board-' + Date.now() + '.json';
