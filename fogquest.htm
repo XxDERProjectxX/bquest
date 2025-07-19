@@ -193,6 +193,15 @@
         
         function generateJson(){
             var output = generateCards("bquest");
+			//swap the corners in for a better fog experience
+			jsonOutput = JSON.parse(output)
+			var orch = jsonOutput[44];
+			jsonOutput[44] = jsonOutput[43];
+			jsonOutput[43] = orch;
+			var wgate = jsonOutput[40];
+			jsonOutput[40] = jsonOutput[41];
+			jsonOutput[41] = wgate;
+			output = JSON.stringify(jsonOutput)
             $("#boardFull").val(btoa(output));
         }
         
