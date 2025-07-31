@@ -52,7 +52,7 @@ body {
 .center-square {
   width: 88%;
   height: 88%;
-  background-color: black;
+  background-color: rgb(255, 0, 0);
   position: absolute;
   top: 6%;
   left: 6%;
