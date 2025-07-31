@@ -34,13 +34,6 @@ body {
   position: relative;
 }
 
-td .inner {
-  width: 90%;
-  height: 90%;
-  background-color: rgb(34, 34, 34);
-  pointer-events: none;
-}
-
 #board td:hover{
   opacity: 0.7;
 }
