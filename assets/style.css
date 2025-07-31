@@ -34,7 +34,7 @@ body {
   position: relative;
 }
 
-.inner {
+td .inner {
   width: 90%;
   height: 90%;
   background-color: rgb(34, 34, 34);
